@@ -33,6 +33,7 @@ gem "font-awesome-rails"
 # gem 'unicorn'
 group :production do
   gem 'pg'
+  gem "rails_12factor", "0.0.2"
 end
 
 # Use Capistrano for deployment
@@ -41,13 +42,15 @@ end
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
-  gem 'sqlite3'
+  gem "travis"
+  gem "rspec-rails"
 end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
   gem 'web-console', '~> 2.0'
-  
+  gem "sqlite3"
+
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
