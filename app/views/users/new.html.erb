@@ -1,11 +1,15 @@
-<h1>Signup!</h1>
+<div class="container">
+  <div class="signin col l8 offset-l4"> 
+    <h1>Signup!</h1>
 
-<%= form_for :user, url: '/users' do |f| %>
+    <%= form_for :user, url: '/users' do |f| %>
 
-  Username: <%= f.text_field :username %>
-  Email: <%= f.text_field :email %>
-  Password: <%= f.password_field :password %>
-  Password Confirmation: <%= f.password_field :password_confirmation %>
-  <%= f.submit "Submit" %>
+      Username: <%= f.text_field :username %>
+      Email: <%= f.text_field :email %>
+      Password: <%= f.password_field :password %>
+      Password Confirmation: <%= f.password_field :password_confirmation %>
+     <div class="waves-effect waves-light btn"><%= f.submit "Submit" %></div> 
 
-<% end %>
+    <% end %>
+  </div>
+</div> 
