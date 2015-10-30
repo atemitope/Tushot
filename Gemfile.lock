@@ -226,6 +226,7 @@ DEPENDENCIES
   jquery-rails
   materialize-sass
   pg
+  pry
   rails (= 4.2.4)
   rails_12factor (= 0.0.2)
   rspec-rails

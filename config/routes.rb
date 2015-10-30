@@ -13,6 +13,9 @@ Rails.application.routes.draw do
   get "/signup" => "users#new"
   post "/users" => "users#create"
 
+
+  resources :links
+
   # Example of regular route:
   #   get "products/:id" => "catalog#view"
 
