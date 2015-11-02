@@ -1,4 +1,7 @@
 class LinksController < ApplicationController
+  def index
+    @link = Link.new
+  end
 
 
   def create
@@ -9,9 +12,7 @@ class LinksController < ApplicationController
     else
       render "new", notice: "Something Happened"
     end
-
   end
-
 
   def show
     link = link.find(params[:short_url])
@@ -19,10 +20,17 @@ class LinksController < ApplicationController
       link.increment_click_count
       redirect_to link.long_url
     else 
-      redirect_back, notice: "Link doesnt exist"
+      redirect_to(:back)
+      # notice: "Link doesnt exist"
     end
   end
 
+
+  def new 
+  end
+
+  def edit
+  end
 
   private
   #specifying only trusted parameters from the Internet

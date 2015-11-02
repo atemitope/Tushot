@@ -1,7 +1,7 @@
 class Link < ActiveRecord::Base
 
 
-  before_validate :generate_short_code
+  before_validation :generate_short_url
 
   def generate_short_url
     begin
@@ -14,6 +14,6 @@ class Link < ActiveRecord::Base
   
   def self.increment_click_count
     self.click_count += 1
-    self.save (validate: false)
+    self.save(validates: false)
   end
 end
