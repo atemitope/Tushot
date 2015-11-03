@@ -4,7 +4,7 @@
     <a href="#" class="brand-logo">
       <div class="left col l2 offset-l1">
         <div class="logo_image">
-          <%= link_to 'root_path' do %>
+          <%= link_to 'links#index' do %>
             <%= image_tag('logo.png') %>
           <% end %>
         </div>
@@ -12,10 +12,10 @@
     </a>
 
 
-     <div class="offset-l7 col l2 "> 
+     <div class="offset-l5 col l4 "> 
      <ul>  
      <li><% if current_user %> Signed in as <%= current_user.username %> </li>
-      <li>|</li>
+      <li>  |</li>
       <li><%= link_to "Logout", '/logout' %> 
         </li>
       <% else %>

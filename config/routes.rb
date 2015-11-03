@@ -14,6 +14,8 @@ Rails.application.routes.draw do
   post "/users" => "users#create"
 
 
+  get "/dashboard"  => "users#dashboard"
+
   resources :links
 
   # Example of regular route:
