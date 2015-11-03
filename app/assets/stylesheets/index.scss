@@ -10,6 +10,10 @@ nav {
   background-color: #333;
 }
 
+.logo_image{
+  padding-top: 7px;
+}
+
 .bg {
 
   background-image:  url("homepage_bg.jpg");
@@ -36,7 +40,7 @@ nav {
 .intro h1
 {
     font-weight: 900;
-    text-transform: uppercase;
+
 }
 
 .intro h5
@@ -86,10 +90,10 @@ nav {
     text-align: center;
 }
 
- .page-footer {
+.page-footer {
   bottom: 0;
   width: 100%;
-  background-color: #333;
+  color: #333;
   box-shadow: 0 0 3px #444;
   color: #fff;
   //margin-top: 65px;
@@ -112,4 +116,9 @@ nav {
   .copyright {
     background-color: #444;
   }
+}
+
+.input-group {
+  color: white;
+  text-align: center;
 }

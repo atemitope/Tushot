@@ -9,7 +9,7 @@
 <body>
 <%= render partial: "partials/application_header" %>
   
-  <% if flash[:error].present? %>
+  <% if flash.present? %>
     <p><%= flash[:error] %></p>
   <% end %>
 

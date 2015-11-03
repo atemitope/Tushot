@@ -1,7 +1,17 @@
 <header>
   <nav>
   <div class="row">
-    <div class="left col l2 offset-l1"><%= link_to "tushot", root_url %></div>
+    <a href="#" class="brand-logo">
+      <div class="left col l2 offset-l1">
+        <div class="logo_image">
+          <%= link_to 'root_path' do %>
+            <%= image_tag('logo.png') %>
+          <% end %>
+        </div>
+     </div>
+    </a>
+
+
      <div class="offset-l7 col l2 "> 
      <ul>  
      <li><% if current_user %> Signed in as <%= current_user.username %> </li>
