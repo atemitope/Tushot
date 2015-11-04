@@ -2,7 +2,7 @@
 <b>Paste your long URL here:</b>
 <%= form_for(@link, remote: true) do |f| %>
     <div class="input-group center white-text">
-      <%= f.url_field :long_url, class:'form-control', placeholder: '        Paste Url Here', required: true  %>
+      <%= f.url_field :long_url, class:'form-control', placeholder: '', required: true  %>
       <div class="input-group-btn">
         <button class='btn btn-info cut'>cut</button>
       </div>

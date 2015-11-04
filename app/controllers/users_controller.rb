@@ -9,19 +9,18 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect_to root_path, notice: "Account created successfully"
     else
-      flash[:error] = "An error occurred!"
+      flash[:notice] = "An error occurred!"
       render "new"
     end
   end
 
 
 def dashboard
-  params[:id] = 1
- user = User.find(params[:id])
+ user = User.find_by(params[:id])
+
  @link = Link.new
   if  !current_user
-    redirect_to "/login"
-    # notice: "you have to be signed in"
+    redirect_to "/login", notice: "you have to be signed in"
   end
 end
 
