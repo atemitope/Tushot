@@ -8,12 +8,16 @@
 </head>
 <body>
 <%= render partial: "partials/application_header" %>
-  
-  <% if flash.present? %>
-    <p><%= flash[:error] %></p>
-  <% end %>
+<% flash.each do | name, msg | %>
+  <div class = "row">
+    <%= content_tag :h3, msg, class: [name, "col offset-l1 flasher"] %>
+  </div>
+<% end %>
 
   <%= yield %>
 <%= render partial: "partials/application_footer" %>
+
+
+
 </body>
 </html>

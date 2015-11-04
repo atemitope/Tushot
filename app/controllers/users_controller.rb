@@ -19,11 +19,14 @@ def dashboard
   params[:id] = 1
  user = User.find(params[:id])
  @link = Link.new
-  if  !current_user 
+  if  !current_user
     redirect_to "/login"
     # notice: "you have to be signed in"
   end
 end
+
+# create a current user method in application controller 
+
 
 
   private

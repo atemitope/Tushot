@@ -23,11 +23,11 @@ nav {
 
 .intro
 {
-  background: #000;
+    color: #e8e8e8;
     text-align: center;
     padding-top: 10%;
     padding-bottom: 13%;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 }
 
 #over 
@@ -40,6 +40,11 @@ nav {
 .intro h1
 {
     font-weight: 900;
+    text-shadow: 0 1px 0 rgba(126, 126, 126, 0.4)
+
+}
+
+.intro p{
 
 }
 
@@ -63,7 +68,8 @@ nav {
     margin-bottom: 24px;
 }
 
-.about h5
+.about h5,
+.container h2
 {
     text-align: center;
     text-transform: uppercase;
@@ -98,7 +104,7 @@ footer.page-footer {
   color: #fff;
   //margin-top: 65px;
   margin-bottom: 0;
-  z-index: -1;
+
 
   .footer-links {
     ul {

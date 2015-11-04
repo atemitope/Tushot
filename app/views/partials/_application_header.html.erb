@@ -14,9 +14,10 @@
 
      <div class="offset-l5 col l4 "> 
      <ul>  
-     <li><% if current_user %> Signed in as <%= current_user.username %> </li>
-      <li>  |</li>
-      <li><%= link_to "Logout", '/logout' %> 
+     <% if current_user %>
+     <li>  <%= link_to "Signed in as #{current_user.username}", "/dashboard"  %> </li>
+      <li></li>
+      <li><%= link_to "Logout", '/logout', data: {confirm: "Are you sure?"} %> 
         </li>
       <% else %>
         <li>

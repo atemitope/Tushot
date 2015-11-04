@@ -8,10 +8,12 @@ class LinksController < ApplicationController
     @link = Link.new(link_params)
     if @link.save
       redirect_to @link.long_url
-      flash[:short_url] = domain_name + "/" + @short_url.short_url
+      flash[:short_url] = Link.new.generate_short_url
+      # flash[:short_url] = domain_name + "/" + @short_url.short_url
     else
-      render "new", notice: "Something Happened"
+      # render :index, notice: "Something Happened"
     end
+    redirect_to(:index)
   end
 
   def show
