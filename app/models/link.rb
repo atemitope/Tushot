@@ -1,5 +1,9 @@
 class Link < ActiveRecord::Base
 
+  scope  :most_recent_links, -> {order("created_at desc").select("long_url","short_url","clicks","created_at")}
+  scope  :most_popular_links, -> {order("clicks desc").select("long_url","short_url","clicks","created_at")}
+
+
   before_create :generate_short_url
 
   def generate_short_url

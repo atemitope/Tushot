@@ -7,8 +7,15 @@
         <h1>Welcome <%= current_user.username %></h1>
 
       <p>This is your dashboard</p>
+      <div class="row">
+        <div class="col s6">
+          <%= render 'links/form' %>
+        </div>
+        <div class="col s6">
+          <%= render 'links/vanity_string_form' %>
+        </div>
 
-      <%= render 'links/form' %>
+      
     </div>
   </div> 
 </div>

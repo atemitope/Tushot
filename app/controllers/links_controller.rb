@@ -1,6 +1,9 @@
 class LinksController < ApplicationController
   def index
     @link = Link.new
+    @most_recent_links = Link.all.most_recent_links.limit(4)
+    @most_popular_links = Link.all.most_popular_links.limit(4)
+    @count = Link.all.count
   end
 
 

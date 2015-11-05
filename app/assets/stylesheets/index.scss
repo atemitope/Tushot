@@ -68,14 +68,13 @@ nav {
     margin-bottom: 24px;
 }
 
-.about h5,
+.about h3,
 .container h2
 {
     text-align: center;
     text-transform: uppercase;
-    margin-bottom: 15px;
-    padding-top: 40px;
-    padding-bottom: 20px;
+    padding-top: 30px;
+
 }
 
 .about h6
@@ -130,9 +129,24 @@ footer.page-footer {
 }
 
 
+.row th {
+  text-align: center;
+}
+
+
+.row td a {
+  text-decoration:none !important;
+  color: white !important;
+}
+
+.row td a:hover {
+  color: #F3E88E !important;
+}
+
 #flash, 
 #shortlink {
-  
+
+  display:none;
   font-size: small;
   text-align: center;
   padding: 20px;
