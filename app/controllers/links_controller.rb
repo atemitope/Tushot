@@ -10,6 +10,7 @@ class LinksController < ApplicationController
   def create
     @link = Link.new(link_params)
     if @link.save
+      current_user.links << @link if current_user
       flash[:notice] = "Link successfully created"
     else
       render :index
@@ -28,6 +29,9 @@ class LinksController < ApplicationController
     end
   end
 
+  def dashboard
+
+  end
 
   def new 
   end

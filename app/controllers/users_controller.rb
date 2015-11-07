@@ -16,14 +16,19 @@ class UsersController < ApplicationController
 
 
 def dashboard
- user = User.find_by(params[:id])
-
- @link = Link.new
+  @user = User.find_by(params[:id])
   if  !current_user
     redirect_to "/login", notice: "you have to be signed in"
   end
+  @link = Link.new
+  @user_links = @user.links.page(params[:page]).per(4)
+  @most_popular_links = Link.all.most_popular_links.page(params[:page]).per(4)
+  @count = @user.links.count
 end
 
+def show
+
+end
 # create a current user method in application controller 
 
 

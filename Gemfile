@@ -26,6 +26,8 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem "pry"
 
+gem "kaminari"
+
 gem 'materialize-sass'
 gem "font-awesome-rails"
 # Use Unicorn as the app server

@@ -1,14 +1,19 @@
-  <div class="row">
-    <div class="input-field col s6">
+<div class="url-form">
 <b>Paste your long URL here:</b>
+<div class="row">
 <%= form_for(@link, remote: true) do |f| %>
-    <div class="input-group center white-text">
+    <div class="col s8 input-group center white-text">
       <%= f.url_field :long_url, class:'form-control', placeholder: '', required: true  %>
+      </div>
+    <div class="col s4 input-group center white-text">
+      <%= f.text_field :short_url, class:'form-control', placeholder: 'custom text', required: true  %>
+      </div>
       <div class="input-group-btn">
         <button class='btn btn-info cut'>cut</button>
       </div>
     </div>
 <% end %>
 </div>
-</div>
+
+
 
