@@ -1,3 +1,4 @@
 $("#shortlinks").html("<%= escape_javascript(render partial: 'shortlink') %>")
-$("#flash").html("<%= escape_javascript(render partial: 'flash') %>").fadeIn(1000).fadeOut(000)
+$("#flash").html("<%= escape_javascript(render partial: 'flash') %>").fadeIn(1000).delay(2000).fadeOut(10000)
+// $("#flash").html("<%= escape_javascript(render partial: 'flash') %>").delay(2000).fadeIn('slow')
 $("#link_long_url").val("")
