@@ -11,7 +11,11 @@ class LinksController < ApplicationController
     @link = Link.new(link_params)
     if @link.save
       current_user.links << @link if current_user
-      flash[:notice] = "Link successfully created"
+      if params[:short_url] &&  (@link.short_url != params[:short_url])
+        flash[:notice] = "that bullet is already chosen but we generated a new one for you"
+      else
+        flash[:notice] = "Link successfully created"
+      end
     else
       render :index
     end

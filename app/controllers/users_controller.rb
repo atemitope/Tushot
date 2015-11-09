@@ -7,7 +7,8 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
-      redirect_to root_path, notice: "Account created successfully"
+      redirect_to "/dashboard"
+      flash[:notice] = "Account created successfully"
     else
       flash[:notice] = "An error occurred!"
       render "new"
@@ -18,11 +19,12 @@ class UsersController < ApplicationController
 def dashboard
   @user = User.find_by(params[:id])
   if  !current_user
-    redirect_to "/login", notice: "you have to be signed in"
+    redirect_to "/login" 
+    flash[:notice] = "you have to be signed in"
   end
   @link = Link.new
-  @user_links = @user.links.page(params[:page]).per(4)
-  @most_popular_links = Link.all.most_popular_links.page(params[:page]).per(4)
+  @user_links = @user.links.most_recent_links.page(params[:page]).per(4)
+  @user_popular_links = @user.links.most_popular_links.page(params[:page]).per(4)
   @count = @user.links.count
 end
 

@@ -1,6 +1,9 @@
 <div class="bg">
   <!-- <div id="over"> -->
 <!--     <div class="container"> -->
+  <div id="flash">
+    <%= render partial: 'links/flash' %>
+  </div>
   <div class="intro container">
 
     <div class="row">
@@ -11,8 +14,8 @@
       <div class="row">
         <%= render 'links/vanity_string_form' %>
       </div>
-      <div class="col s3">
-         <div class="shortlink" id="shortlink">  </div>
+
+         <div class="shortlink" id="shortlinks"> </div>
 
 
       
@@ -69,7 +72,7 @@
         </thead>
 
         <tbody>
-          <% @most_popular_links.each do |f| %>
+          <% @user_popular_links.each do |f| %>
           <tr>
             <td><%= link_to "#{truncate f.long_url, length: 18}", f.long_url %></td>
             <td><%= link_to "#{root_url}#{f.short_url}", f.short_url %></td>
@@ -78,7 +81,7 @@
           <% end %>
         </tbody>
       </table>
-       <%= paginate @most_popular_links %>
+       <%= paginate @user_popular_links %>
       </div>
     </div>
   </div>

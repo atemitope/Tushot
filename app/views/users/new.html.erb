@@ -1,5 +1,8 @@
 <div class="container">
   <div class="signin col l8 offset-l4"> 
+    <div id="flash">
+      <%= render partial: 'links/flash' %>
+    </div>
     <h2>Signup!</h2>
 
     <%= form_for :user, url: '/users' do |f| %>

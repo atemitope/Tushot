@@ -11,8 +11,9 @@ class Link < ActiveRecord::Base
       generate_url = SecureRandom.urlsafe_base64
       if short_url
         self.short_url = Link.find_by(short_url: short_url) == nil ? self.short_url : generate_url[0..6]
+      else
+        self.short_url = generate_url[0..6]
       end
     end while self.class.exists?(short_url: short_url)
   end
-  
 end
