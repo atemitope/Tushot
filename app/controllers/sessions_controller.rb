@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
       redirect_to "/dashboard"
     else
     # If user"s login doesn"t work, send them back to the login form.
-      flash[:error] = "Incorrect Username or password!"
+      flash[:notice] = "Incorrect Username or password!"
       redirect_to "/login"
     end
   end

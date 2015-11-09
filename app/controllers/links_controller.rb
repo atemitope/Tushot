@@ -9,9 +9,11 @@ class LinksController < ApplicationController
 
   def create
     @link = Link.new(link_params)
+    # require 'pry'; binding.pry
     if @link.save
       current_user.links << @link if current_user
-      if params[:short_url] &&  (@link.short_url != params[:short_url])
+      if params[:link][:short_url]  &&  (@link.short_url != params[:link][:short_url])
+
         flash[:notice] = "that bullet is already chosen but we generated a new one for you"
       else
         flash[:notice] = "Link successfully created"
@@ -29,7 +31,8 @@ class LinksController < ApplicationController
       @link.save
       redirect_to @link.long_url
     else 
-      redirect_to root_url, notice: "Link doesnt exist"
+      redirect_to root_url,
+      flash[:notice] = "Link doesnt exist"
     end
   end
 

@@ -28,6 +28,7 @@ def dashboard
   @count = @user.links.count
 end
 
+
 def show
 
 end
@@ -36,7 +37,7 @@ end
 
 
   private
-
+#grants permission to parameters coming from the browser
   def user_params
     params.require(:user).permit(:username, :email, :password, :password_confirmation)
   end
