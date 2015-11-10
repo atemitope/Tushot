@@ -14,6 +14,7 @@ Tushot is an advanced military Url shortener. As the name implies it simply uses
 
   As a regular user you visit Tushot.heroku.com and input your url in the form provided then "shoot" it. you will be presented with your short url
   Regular users also get access to overall statistical data from Tushot HQ
+
   
 ----------
 
@@ -80,5 +81,4 @@ a test!
 * Follow the conventions you see used in the source already.
 * Deployment instructions
 
-* ...
-
+* .....
