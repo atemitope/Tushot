@@ -9,19 +9,19 @@ class LinksController < ApplicationController
 
   def create
     @link = Link.new(link_params)
-    # require 'pry'; binding.pry
     if @link.save
       current_user.links << @link if current_user
-      if params[:link][:short_url]  &&  (@link.short_url != params[:link][:short_url])
-
-        flash[:notice] = "that bullet is already chosen but we generated a new one for you"
-      else
-        flash[:notice] = "Link successfully created"
-      end
+        if params[:link][:short_url]  &&  (@link.short_url != params[:link][:short_url])
+          flash[:notice] = "that bullet is already chosen but we generated a new one for you"
+        else
+          flash[:notice] = "Link successfully created"
+        end
     else
       render :index
+      flash[:notice] = "Error generating Link, Try Again"
     end
   end
+
 
   def show
     @link = Link.find_by(short_url: params[:id])
