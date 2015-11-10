@@ -9,7 +9,7 @@ RSpec.describe User, type: :model do
 
   it { expect(user).to be_valid }
 
-  describe "#name" do
+  describe "#username" do
     context "when username is not present" do
       let(:username) { "" }
       it { expect(user).to be_invalid }

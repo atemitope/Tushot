@@ -14,26 +14,26 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2015-11-10T15:31:38+01:00">2015-11-10T15:31:38+01:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2015-11-10T18:04:23+01:00">2015-11-10T18:04:23+01:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="red">66.67%</span></span>
+    (<span class="covered_percent"><span class="red">74.13%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.19
+         1.22
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
-    <b>14</b> files in total.
-    <b>111</b> relevant lines. 
-    <span class="green"><b>74</b> lines covered</span> and
+    <b>15</b> files in total.
+    <b>143</b> relevant lines. 
+    <span class="green"><b>106</b> lines covered</span> and
     <span class="red"><b>37</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -131,6 +131,16 @@
       </tr>
       
       <tr>
+        <td class="strong"><a href="#6a57307824d38f35b551e718277e74fc8c987baa" class="src_link" title="app/models/link.rb">app/models/link.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>21</td>
+        <td>12</td>
+        <td>12</td>
+        <td>0</td>
+        <td>1.6</td>
+      </tr>
+      
+      <tr>
         <td class="strong"><a href="#93045aad571163cfbc3b9e3e94e07c0f655bf485" class="src_link" title="app/models/user.rb">app/models/user.rb</a></td>
         <td class="green strong">100.0 %</td>
         <td>16</td>
@@ -173,11 +183,11 @@
       <tr>
         <td class="strong"><a href="#1cf011791c1cb22313ffc3345ba40802fd37f677" class="src_link" title="spec/models/link_spec.rb">spec/models/link_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>16</td>
+        <td>33</td>
+        <td>20</td>
+        <td>20</td>
         <td>0</td>
-        <td>0</td>
-        <td>0</td>
-        <td>0.0</td>
+        <td>1.2</td>
       </tr>
       
       <tr>
@@ -1100,6 +1110,150 @@
   </pre>
 </div>
       
+        <div class="source_table" id="6a57307824d38f35b551e718277e74fc8c987baa">
+  <div class="header">
+    <h3>app/models/link.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>12</b> relevant lines. 
+      <span class="green"><b>12</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class Link &lt; ActiveRecord::Base</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="2">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  scope  :most_recent_links, -&gt; {order(&quot;created_at desc&quot;).select(&quot;long_url&quot;,&quot;short_url&quot;,&quot;clicks&quot;,&quot;created_at&quot;)}</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  scope  :most_popular_links, -&gt; {order(&quot;clicks desc&quot;).select(&quot;long_url&quot;,&quot;short_url&quot;,&quot;clicks&quot;,&quot;created_at&quot;)}</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="5">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  belongs_to :user</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="7">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  before_create :generate_short_url</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="8">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="9">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  validates :long_url, presence: true</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="10">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="11">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def generate_short_url</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="12">
+          
+          
+          <code class="ruby">    begin</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="13">
+          <span class="hits">3</span>
+          
+          <code class="ruby">      generate_url = SecureRandom.urlsafe_base64</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="14">
+          <span class="hits">3</span>
+          
+          <code class="ruby">      if short_url</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="15">
+          <span class="hits">2</span>
+          
+          <code class="ruby">        self.short_url = Link.find_by(short_url: short_url) == nil ? self.short_url : generate_url[0..6]</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="16">
+          
+          
+          <code class="ruby">      else</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="17">
+          <span class="hits">1</span>
+          
+          <code class="ruby">        self.short_url = generate_url[0...6]</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="18">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="19">
+          <span class="hits">3</span>
+          
+          <code class="ruby">    end while self.class.exists?(short_url: short_url)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="20">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="21">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
         <div class="source_table" id="93045aad571163cfbc3b9e3e94e07c0f655bf485">
   <div class="header">
     <h3>app/models/user.rb</h3>
@@ -1483,8 +1637,8 @@
     <h3>spec/models/link_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>0</b> relevant lines. 
-      <span class="green"><b>0</b> lines covered</span> and
+      <b>20</b> relevant lines. 
+      <span class="green"><b>20</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -1492,10 +1646,10 @@
   <pre>
     <ol>
       
-        <li class="never" data-hits="" data-linenumber="1">
+        <li class="covered" data-hits="1" data-linenumber="1">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"># require &quot;rails_helper&quot;</code>
+          <code class="ruby">require &quot;rails_helper&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="2">
@@ -1504,22 +1658,22 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="3">
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"># RSpec.describe Link, type: :model do</code>
+          <code class="ruby">RSpec.describe Link, type: :model do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="4">
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">#   subject(:link) { Link.new(long_url: long_url) }</code>
+          <code class="ruby">  subject(:link) { Link.new(long_url: long_url) }</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="5">
+        <li class="covered" data-hits="4" data-linenumber="5">
+          <span class="hits">4</span>
           
-          
-          <code class="ruby">#   let(:long_url) { &quot;http://www.andela.com&quot; }</code>
+          <code class="ruby">  let(:long_url) { &quot;http://www.andela.com&quot; }</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="6">
@@ -1534,10 +1688,10 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="8">
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">#   # describe &quot;#generate_short_url&quot; do</code>
+          <code class="ruby">  describe &quot;#generate_short_url&quot; do</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="9">
@@ -1546,46 +1700,148 @@
           <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="10">
+        <li class="covered" data-hits="1" data-linenumber="10">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">#   #   it &quot;shortens a string if the current value of the short url is nil&quot; do</code>
+          <code class="ruby">    it &quot;should generate a random 6 letter string&quot; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="11">
+        <li class="covered" data-hits="1" data-linenumber="11">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">#   #    allow(link).to receive(:short_url).and_return(nil)</code>
+          <code class="ruby">      @link = Link.new(long_url: long_url)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="12">
+        <li class="covered" data-hits="1" data-linenumber="12">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">#   #       # generate_short_url</code>
+          <code class="ruby">      @link.short_url = nil</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="13">
+        <li class="covered" data-hits="1" data-linenumber="13">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">#   #     expect(link.short_url).to receive(:length).and_return(6)</code>
+          <code class="ruby">      @link.save</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="14">
+        <li class="covered" data-hits="1" data-linenumber="14">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">#   #   end</code>
+          <code class="ruby">      expect(@link.short_url.length).to be(6)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="15">
           
           
-          <code class="ruby">#   # end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="16">
           
           
-          <code class="ruby"># end</code>
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="17">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &quot;should generate a random string for the user if the given string has already been used&quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="18">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      @link = Link.new(long_url: long_url)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="19">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      @link.short_url = &quot;emeka&quot;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="20">
+          
+          
+          <code class="ruby">      #&quot;emeka&quot; is one of the given strings that already exists in the database</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="21">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      @link.save</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="22">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(@link.short_url).not_to eql(&quot;emeka&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="23">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="24">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="25">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    it &quot;should allow the given url to be short url if it hasnt been previously &quot; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="26">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      @link = Link.new(long_url: long_url)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="27">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      @link.short_url = &quot;checkpoint&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="28">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      @link.save</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="29">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      expect(@link.short_url).to eql(&quot;checkpoint&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="30">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="31">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="32">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="33">
+          
+          
+          <code class="ruby">end</code>
         </li>
       
     </ol>
@@ -1675,7 +1931,7 @@
         <li class="covered" data-hits="1" data-linenumber="12">
           <span class="hits">1</span>
           
-          <code class="ruby">  describe &quot;#name&quot; do</code>
+          <code class="ruby">  describe &quot;#username&quot; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="13">
