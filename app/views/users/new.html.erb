@@ -1,11 +1,21 @@
-<h1>Signup!</h1>
+<div class="container">
+  <div class="signin col l8 offset-l4"> 
+    <div id="flash">
+      <%= render partial: 'links/flash' %>
+    </div>
+    <h3>Signup!</h3>
 
-<%= form_for :user, url: '/users' do |f| %>
+    <%= form_for :user, url: '/users' do |f| %>
 
-  Username: <%= f.text_field :username %>
-  Email: <%= f.text_field :email %>
-  Password: <%= f.password_field :password %>
-  Password Confirmation: <%= f.password_field :password_confirmation %>
-  <%= f.submit "Submit" %>
+      Username: <%= f.text_field :username, required: true %>
+      Email: <%= f.text_field :email, required: true %>
+      Password: <%= f.password_field :password, required: true %>
+      Password Confirmation: <%= f.password_field :password_confirmation, required: true  %>
+     <%= f.submit "Submit", class: "btn blue" %> 
 
-<% end %>
+    <% end %>
+  </div>
+</div>  
+
+
+

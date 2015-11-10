@@ -1,0 +1,37 @@
+<header>
+  <nav>
+  <div class="row">
+    <a href="#" class="brand-logo">
+      <div class="left col l2 offset-l1">
+        <div class="logo_image">
+          <%= link_to 'links#index' do %>
+            <%= image_tag('logo.png') %>
+          <% end %>
+        </div>
+     </div>
+    </a>
+
+
+     <div class="offset-l5 col l4 "> 
+     <ul>  
+     <% if current_user %>
+     <li>  <%= link_to "Welcome #{current_user.username}", "/dashboard"  %> </li>
+      <li></li>
+      <li><%= link_to "Logout", '/logout', data: {confirm: "Are you sure?"} %> 
+        </li>
+      <% else %>
+        <li>
+         <%= link_to 'Signup', '/signup' %>
+        </li>
+        <li>|</li> 
+       <li>
+         <%= link_to 'Login', '/login' %>
+         <% end %>
+       </li>       
+     </ul>
+       </div>
+      
+    </div>
+  </nav>
+          
+</header>

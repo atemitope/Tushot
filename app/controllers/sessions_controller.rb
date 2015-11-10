@@ -13,16 +13,21 @@ class SessionsController < ApplicationController
     when they navigate around our website.
 =end
       session[:user_id] = user.id
-      redirect_to "/index"
+      redirect_to "/dashboard"
     else
     # If user"s login doesn"t work, send them back to the login form.
-      flash[:error] = "Incorrect Username or password!"
+      flash[:notice] = "Incorrect Username or password!"
       redirect_to "/login"
     end
   end
 
   def destroy
-    session[:user_id] = nil
-    redirect_to "/login"
+    session.clear
+    redirect_to root_path
   end
+
+  # def destroy
+  #   session[:user_id] = nil
+  #   redirect_to "/login"
+  # end
 end
