@@ -1,0 +1,18 @@
+language: ruby
+rvm:
+  - 2.1.5
+
+cache: bundler
+
+script: 'bundle exec rake'
+
+notifications:
+  email:
+    recipients:
+      - amodut@gmail.com
+    on_failure: change
+    on_success: never
+after_sucess: 
+  - coveralls
+
+

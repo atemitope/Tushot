@@ -3,15 +3,7 @@
     "coverage": {
       "c:/Users/currys/documents/html/checkpoint_2/tushot/app/helpers/application_helper.rb": [
         1,
-        1,
         null,
-        null,
-        1,
-        null,
-        null,
-        1,
-        0,
-        0,
         null,
         null
       ],
@@ -21,6 +13,7 @@
       ],
       "c:/Users/currys/documents/html/checkpoint_2/tushot/app/helpers/links_helper.rb": [
         1,
+        null,
         null
       ],
       "c:/Users/currys/documents/html/checkpoint_2/tushot/app/helpers/sessions_helper.rb": [
@@ -43,17 +36,17 @@
         null,
         1,
         0,
-        null,
         0,
         0,
         0,
-        null,
         0,
         null,
         0,
         null,
         null,
         0,
+        0,
+        null,
         null,
         null,
         null,
@@ -149,29 +142,6 @@
         null,
         null
       ],
-      "c:/Users/currys/documents/html/checkpoint_2/tushot/app/models/link.rb": [
-        1,
-        null,
-        1,
-        1,
-        null,
-        1,
-        1,
-        null,
-        1,
-        null,
-        1,
-        null,
-        0,
-        0,
-        0,
-        null,
-        0,
-        null,
-        0,
-        null,
-        null
-      ],
       "c:/Users/currys/documents/html/checkpoint_2/tushot/app/models/user.rb": [
         1,
         1,
@@ -191,6 +161,6 @@
         null
       ]
     },
-    "timestamp": 1447126647
+    "timestamp": 1447130629
   }
 }
