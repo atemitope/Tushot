@@ -1,9 +1,9 @@
 scss:
-  enabled: false
+  enabled: true
 
 ruby:
   config_file: .ruby-style.yml
-  enabled: false
+  enabled: true
 
 javascript:
   ignore_file: .javascript_ignore
