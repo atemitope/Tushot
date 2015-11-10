@@ -6,6 +6,8 @@ class Link < ActiveRecord::Base
   belongs_to :user
   before_create :generate_short_url
 
+  validates :long_url, presence: true
+
   def generate_short_url
     begin
       generate_url = SecureRandom.urlsafe_base64

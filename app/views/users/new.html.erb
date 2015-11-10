@@ -3,14 +3,14 @@
     <div id="flash">
       <%= render partial: 'links/flash' %>
     </div>
-    <h2>Signup!</h2>
+    <h3>Signup!</h3>
 
     <%= form_for :user, url: '/users' do |f| %>
 
-      Username: <%= f.text_field :username %>
-      Email: <%= f.text_field :email %>
-      Password: <%= f.password_field :password %>
-      Password Confirmation: <%= f.password_field :password_confirmation %>
+      Username: <%= f.text_field :username, required: true %>
+      Email: <%= f.text_field :email, required: true %>
+      Password: <%= f.password_field :password, required: true %>
+      Password Confirmation: <%= f.password_field :password_confirmation, required: true  %>
      <%= f.submit "Submit", class: "btn blue" %> 
 
     <% end %>

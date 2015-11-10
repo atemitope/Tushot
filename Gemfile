@@ -30,6 +30,7 @@ gem "kaminari"
 
 gem 'materialize-sass'
 gem "font-awesome-rails"
+gem "coveralls", require: false
 # Use Unicorn as the app server
 # gem 'unicorn'
 group :production do
@@ -48,6 +49,9 @@ group :development, :test do
   gem "sqlite3"
 end
 
+group :test do
+  gem "capybara"
+end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
