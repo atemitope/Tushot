@@ -1,5 +1,7 @@
 source 'https://rubygems.org'
 
+ruby '2.2.3'
+
 gem 'rails', '4.2.4'
 
 gem 'sass-rails', '~> 5.0'
@@ -32,13 +34,13 @@ gem 'simplecov', require: false
 gem "coveralls", require: false
 
 group :production do
-  gem 'pg'
+  gem 'pg', '0.17.1'
   gem "rails_12factor", "0.0.2"
 end
 
 
 group :development, :test do
-  gem 'byebug'
+  gem 'byebug', "6.0.2"
   gem "travis"
   gem "rspec-rails"
   gem "sqlite3"
@@ -49,9 +51,6 @@ group :test do
 end
 
 group :development do
-  
+
   gem 'web-console', '~> 2.0'
 end
-
-
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
