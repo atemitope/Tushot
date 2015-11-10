@@ -6,17 +6,19 @@
 ### Overview
 
 [*www.tushot-heroku.com*](tushot.heroku.com)
+
 Tushot is an advanced military Url shortener. As the name implies it simply uses its ammunition powered by Rails 4 to shoot your long Urls and leave them in short concise strings. These short strings are actually redirected to the assigned url and when clicked, they record the neccesary statistics and redirect to the designated Url
  There are two kinds of users, you can either be :
 
 **Regular User** 
-  As a regular user you visit Tushot.heroku.com and input your url in the form provided than "shoot" it. you will be presented with your short url
+
+  As a regular user you visit Tushot.heroku.com and input your url in the form provided then "shoot" it. you will be presented with your short url
   Regular users also get access to overall statistical data from Tushot HQ
   
 ----------
 
 
-**Registered Users **
+**Registered Users**
 
  Registered Users can comfortably specify a given word or string for more enhanced shortening. If the word or string is chosen a random one is generated for you in its place. Registered Users can visibly affirm the amount of Urls they have shortened including their most popular and most recent Urls
 
@@ -80,6 +82,3 @@ a test!
 
 * ...
 
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
