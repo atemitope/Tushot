@@ -27,6 +27,8 @@ gem 'materialize-sass'
 
 gem "font-awesome-rails"
 
+gem 'simplecov', require: false
+
 gem "coveralls", require: false
 
 group :production do

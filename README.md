@@ -1,6 +1,8 @@
 
 # README
-## Tushot
+## Tushot 
+
+[![Circle CI](https://circleci.com/gh/andela-atemitope/Tushot/tree/working_url_shortener.svg?style=svg)](https://circleci.com/gh/andela-atemitope/Tushot/tree/working_url_shortener)
 ### Overview
 
 [*www.tushot-heroku.com*](tushot.heroku.com)
