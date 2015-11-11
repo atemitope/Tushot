@@ -5,6 +5,7 @@ class Link < ActiveRecord::Base
 
   belongs_to :user
   before_create :generate_short_url
+  # before_filter :deny_access, :unless => :draft_and_admin?
 
   validates :long_url, presence: true
 
@@ -12,7 +13,7 @@ class Link < ActiveRecord::Base
     begin
       generate_url = SecureRandom.urlsafe_base64
       if short_url
-        self.short_url = Link.find_by(short_url: short_url) == nil ? self.short_url : generate_url[0..6]
+        self.short_url = Link.find_by(short_url: short_url) == nil ? self.short_url : generate_url[0...6]
       else
         self.short_url = generate_url[0...6]
       end
