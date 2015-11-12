@@ -23,11 +23,15 @@ gem 'bcrypt', '~> 3.1.7'
 
 gem "pry", "0.10.3"
 
+gem "pry-nav"
+
 gem "kaminari"
 
 gem 'materialize-sass'
 
 gem "font-awesome-rails"
+
+gem 'valid_url', '~> 0.0.4'
 
 gem 'simplecov', require: false
 

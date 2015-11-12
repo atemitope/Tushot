@@ -1,6 +1,7 @@
 
 class SessionsController < ApplicationController
   def new
+    redirect_to "/dashboard" if current_user
   end
 
   def create
@@ -17,7 +18,7 @@ class SessionsController < ApplicationController
     else
     # If user"s login doesn"t work, send them back to the login form.
       flash[:notice] = "Incorrect Username or password!"
-      redirect_to "/login"
+      render "new"
     end
   end
 
@@ -26,7 +27,14 @@ class SessionsController < ApplicationController
     redirect_to root_path
   end
 
-  # def destroy
+
+# def login 
+#   if current_user
+#     redirect_to "/dashboard"
+#   else 
+#   end
+# end 
+#   # def destroy
   #   session[:user_id] = nil
   #   redirect_to "/login"
   # end
