@@ -11,7 +11,6 @@ class Link < ActiveRecord::Base
   validates :long_url, :url => true, presence: true
 
   def generate_short_url
-    require 'pry'; binding.pry
     begin
       generate_url = SecureRandom.urlsafe_base64
       if short_url 
