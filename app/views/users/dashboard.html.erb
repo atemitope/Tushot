@@ -1,17 +1,20 @@
-<div class="bg">
-  <div id="flash">
-    <%= render partial: 'links/flash' %>
-  </div>
-  <div class="intro container">
-    <div class="row">
-      <h1>Welcome <%= current_user.username %></h1>
-      <p>This is your dashboard</p>
-        <br>
-      <p> you can input your custom url below</p>
+<!-- <div class="bg"> -->
+  <div id="dashboard_bg">
+  <div id="over">
+    <div id="flash">
+      <%= render partial: 'links/flash' %>
+    </div>
+    <div class="intro container">
       <div class="row">
-        <%= render 'links/vanity_string_form' %>
+        <h1>Welcome <%= current_user.username %></h1>
+        <p>This is your dashboard</p>
+          <br>
+        <p> you can input your custom url below</p>
+        <div class="row">
+          <%= render 'links/vanity_string_form' %>
+        </div>
+        <div class="shortlink" id="shortlinks"> </div>
       </div>
-      <div class="shortlink" id="shortlinks"> </div>
     </div>
   </div> 
 </div>
