@@ -130,6 +130,7 @@ GEM
       slop (~> 3.4)
     pry-nav (0.2.4)
       pry (>= 0.9.10, < 0.11.0)
+    puma (2.14.0)
     pusher-client (0.6.2)
       json
       websocket (~> 1.0)
@@ -273,6 +274,7 @@ DEPENDENCIES
   pg (= 0.17.1)
   pry (= 0.10.3)
   pry-nav
+  puma
   rails (= 4.2.4)
   rails_12factor (= 0.0.2)
   rspec-rails

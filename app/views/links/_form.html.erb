@@ -4,7 +4,7 @@
     <div class="input-group center white-text">
       <%= f.url_field :long_url, class:'form-control', placeholder: '', required: true  %>
       <div class="input-group-btn">
-        <button class='btn btn-info cut'>cut</button>
+        <%= f.submit "shoot", class: "btn btn-info cut" %>
       </div>
     </div>
 <% end %>
