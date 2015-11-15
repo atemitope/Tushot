@@ -53,6 +53,7 @@ group :development, :test do
   gem "travis"
   gem "rspec-rails"
   gem "sqlite3"
+  gem "database_cleaner"
 end
 
 group :test do

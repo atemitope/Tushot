@@ -67,7 +67,7 @@ end
 
 
     it "the page should have a helpful description" do
-      expect(User.count).to eql 2
+      expect(User.count).to eql 0
       visit '/signup'
       fill_in "user[username]", with: ""
       fill_in "user[email]", with: "oscillo@yahoo.com"
@@ -78,37 +78,37 @@ end
     end
 
     it "the page should have a helpful description" do
-      expect(User.count).to eql 2
+      expect(User.count).to eql 0
       visit '/signup'
       fill_in "user[username]", with: "oscillo"
       fill_in "user[email]", with: ""
       fill_in "user[password]", with: "oscarpistorius"
       fill_in "user[password_confirmation]", with: "oscarpistorius"
       find(".account_submit").click
-      expect(Link.count).not_to eql 3
+      expect(Link.count).not_to eql 1
     end
 
 
     it "the page should have a helpful description" do
-      expect(User.count).to eql 2
+      expect(User.count).to eql 0
       visit '/signup'
       fill_in "user[username]", with: "oscillo"
       fill_in "user[email]", with: "oscillo@gmail.com"
       fill_in "user[password]", with: ""
       fill_in "user[password_confirmation]", with: "oscarpistorius"
       find(".account_submit").click
-      expect(Link.count).not_to eql 3
+      expect(Link.count).not_to eql 1
     end
 
     it "the page should have a helpful description" do
-      expect(User.count).to eql 2
+      expect(User.count).to eql 0
       visit '/signup'
       fill_in "user[username]", with: "oscillo"
       fill_in "user[email]", with: "oscillo@gmail.com"
       fill_in "user[password]", with: "oscarpistorius"
       fill_in "user[password_confirmation]", with: ""
       find(".account_submit").click
-      expect(Link.count).not_to eql 3
+      expect(Link.count).not_to eql 1
     end
   end
 

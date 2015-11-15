@@ -5,7 +5,7 @@
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <script src='./assets/0.10.0/application.js' type='text/javascript'></script>    
     <link href='./assets/0.10.0/application.css' media='screen, projection, print' rel='stylesheet' type='text/css'>
-    <link rel="shortcut icon" type="image/png" href="./assets/0.10.0/favicon_yellow.png" />
+    <link rel="shortcut icon" type="image/png" href="./assets/0.10.0/favicon_green.png" />
     <link rel="icon" type="image/png" href="./assets/0.10.0/favicon.png" />
   </head>
   
@@ -14,18 +14,18 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2015-11-15T14:29:17+01:00">2015-11-15T14:29:17+01:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2015-11-15T19:12:10+01:00">2015-11-15T19:12:10+01:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="yellow">80.98%</span></span>
+    (<span class="covered_percent"><span class="green">90.82%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.53
+         1.71
        </span>
     </span> hits/line)
   </h2>
@@ -33,8 +33,8 @@
   <div>
     <b>18</b> files in total.
     <b>305</b> relevant lines. 
-    <span class="green"><b>247</b> lines covered</span> and
-    <span class="red"><b>58</b> lines missed </span>
+    <span class="green"><b>277</b> lines covered</span> and
+    <span class="red"><b>28</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -57,7 +57,7 @@
         <td>7</td>
         <td>6</td>
         <td>1</td>
-        <td>7.7</td>
+        <td>8.9</td>
       </tr>
       
       <tr>
@@ -82,12 +82,12 @@
       
       <tr>
         <td class="strong"><a href="#53dd390c95579b180286d5027468b1a3fdb8b912" class="src_link" title="app/controllers/users_controller.rb">app/controllers/users_controller.rb</a></td>
-        <td class="yellow strong">82.61 %</td>
+        <td class="green strong">91.3 %</td>
         <td>44</td>
         <td>23</td>
-        <td>19</td>
-        <td>4</td>
-        <td>3.2</td>
+        <td>21</td>
+        <td>2</td>
+        <td>4.0</td>
       </tr>
       
       <tr>
@@ -182,12 +182,12 @@
       
       <tr>
         <td class="strong"><a href="#f2d1671fe2e43ef8ca8fb8b8a81a061f90e75543" class="src_link" title="spec/integration/guest_url_shorten_spec.rb">spec/integration/guest_url_shorten_spec.rb</a></td>
-        <td class="red strong">70.83 %</td>
+        <td class="green strong">100.0 %</td>
         <td>147</td>
         <td>96</td>
-        <td>68</td>
-        <td>28</td>
-        <td>0.7</td>
+        <td>96</td>
+        <td>0</td>
+        <td>1.0</td>
       </tr>
       
       <tr>
@@ -296,8 +296,8 @@
           <code class="ruby">  def current_user</code>
         </li>
       
-        <li class="covered" data-hits="49" data-linenumber="7">
-          <span class="hits">49</span>
+        <li class="covered" data-hits="57" data-linenumber="7">
+          <span class="hits">57</span>
           
           <code class="ruby">    @current_user ||= User.find(session[:user_id]) if session[:user_id]</code>
         </li>
@@ -1065,11 +1065,11 @@
         <div class="source_table" id="53dd390c95579b180286d5027468b1a3fdb8b912">
   <div class="header">
     <h3>app/controllers/users_controller.rb</h3>
-    <h4><span class="yellow">82.61 %</span> covered</h4>
+    <h4><span class="green">91.3 %</span> covered</h4>
     <div>
       <b>23</b> relevant lines. 
-      <span class="green"><b>19</b> lines covered</span> and
-      <span class="red"><b>4</b> lines missed.</span>
+      <span class="green"><b>21</b> lines covered</span> and
+      <span class="red"><b>2</b> lines missed.</span>
     </div>
   </div>
   
@@ -1112,14 +1112,14 @@
           <code class="ruby">  def create</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="7">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="7" data-linenumber="7">
+          <span class="hits">7</span>
           
           <code class="ruby">    @user = User.new(user_params)</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="8">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="7" data-linenumber="8">
+          <span class="hits">7</span>
           
           <code class="ruby">    if @user.save</code>
         </li>
@@ -1148,14 +1148,14 @@
           <code class="ruby">    else</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="13">
-          
+        <li class="covered" data-hits="4" data-linenumber="13">
+          <span class="hits">4</span>
           
           <code class="ruby">      flash[:notice] = &quot;An error occurred!&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="14">
-          
+        <li class="covered" data-hits="4" data-linenumber="14">
+          <span class="hits">4</span>
           
           <code class="ruby">      render &quot;new&quot;</code>
         </li>
@@ -1322,8 +1322,8 @@
           <code class="ruby">  def user_params</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="42">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="7" data-linenumber="42">
+          <span class="hits">7</span>
           
           <code class="ruby">    params.require(:user).permit(:username, :email, :password, :password_confirmation)</code>
         </li>
@@ -2055,11 +2055,11 @@
         <div class="source_table" id="f2d1671fe2e43ef8ca8fb8b8a81a061f90e75543">
   <div class="header">
     <h3>spec/integration/guest_url_shorten_spec.rb</h3>
-    <h4><span class="red">70.83 %</span> covered</h4>
+    <h4><span class="green">100.0 %</span> covered</h4>
     <div>
       <b>96</b> relevant lines. 
-      <span class="green"><b>68</b> lines covered</span> and
-      <span class="red"><b>28</b> lines missed.</span>
+      <span class="green"><b>96</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
   
@@ -2483,47 +2483,47 @@
         <li class="covered" data-hits="1" data-linenumber="70">
           <span class="hits">1</span>
           
-          <code class="ruby">      expect(User.count).to eql 2</code>
+          <code class="ruby">      expect(User.count).to eql 0</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="71">
-          
+        <li class="covered" data-hits="1" data-linenumber="71">
+          <span class="hits">1</span>
           
           <code class="ruby">      visit &#39;/signup&#39;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="72">
-          
+        <li class="covered" data-hits="1" data-linenumber="72">
+          <span class="hits">1</span>
           
           <code class="ruby">      fill_in &quot;user[username]&quot;, with: &quot;&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="73">
-          
+        <li class="covered" data-hits="1" data-linenumber="73">
+          <span class="hits">1</span>
           
           <code class="ruby">      fill_in &quot;user[email]&quot;, with: &quot;oscillo@yahoo.com&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="74">
-          
+        <li class="covered" data-hits="1" data-linenumber="74">
+          <span class="hits">1</span>
           
           <code class="ruby">      fill_in &quot;user[password]&quot;, with: &quot;oscarpistorius&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="75">
-          
+        <li class="covered" data-hits="1" data-linenumber="75">
+          <span class="hits">1</span>
           
           <code class="ruby">      fill_in &quot;user[password_confirmation]&quot;, with: &quot;oscarpistorius&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="76">
-          
+        <li class="covered" data-hits="1" data-linenumber="76">
+          <span class="hits">1</span>
           
           <code class="ruby">      find(&quot;.account_submit&quot;).click</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="77">
-          
+        <li class="covered" data-hits="1" data-linenumber="77">
+          <span class="hits">1</span>
           
           <code class="ruby">      expect(Link.count).not_to eql 1</code>
         </li>
@@ -2549,49 +2549,49 @@
         <li class="covered" data-hits="1" data-linenumber="81">
           <span class="hits">1</span>
           
-          <code class="ruby">      expect(User.count).to eql 2</code>
+          <code class="ruby">      expect(User.count).to eql 0</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="82">
-          
+        <li class="covered" data-hits="1" data-linenumber="82">
+          <span class="hits">1</span>
           
           <code class="ruby">      visit &#39;/signup&#39;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="83">
-          
+        <li class="covered" data-hits="1" data-linenumber="83">
+          <span class="hits">1</span>
           
           <code class="ruby">      fill_in &quot;user[username]&quot;, with: &quot;oscillo&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="84">
-          
+        <li class="covered" data-hits="1" data-linenumber="84">
+          <span class="hits">1</span>
           
           <code class="ruby">      fill_in &quot;user[email]&quot;, with: &quot;&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="85">
-          
+        <li class="covered" data-hits="1" data-linenumber="85">
+          <span class="hits">1</span>
           
           <code class="ruby">      fill_in &quot;user[password]&quot;, with: &quot;oscarpistorius&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="86">
-          
+        <li class="covered" data-hits="1" data-linenumber="86">
+          <span class="hits">1</span>
           
           <code class="ruby">      fill_in &quot;user[password_confirmation]&quot;, with: &quot;oscarpistorius&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="87">
-          
+        <li class="covered" data-hits="1" data-linenumber="87">
+          <span class="hits">1</span>
           
           <code class="ruby">      find(&quot;.account_submit&quot;).click</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="88">
+        <li class="covered" data-hits="1" data-linenumber="88">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">      expect(Link.count).not_to eql 3</code>
+          <code class="ruby">      expect(Link.count).not_to eql 1</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="89">
@@ -2621,49 +2621,49 @@
         <li class="covered" data-hits="1" data-linenumber="93">
           <span class="hits">1</span>
           
-          <code class="ruby">      expect(User.count).to eql 2</code>
+          <code class="ruby">      expect(User.count).to eql 0</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="94">
-          
+        <li class="covered" data-hits="1" data-linenumber="94">
+          <span class="hits">1</span>
           
           <code class="ruby">      visit &#39;/signup&#39;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="95">
-          
+        <li class="covered" data-hits="1" data-linenumber="95">
+          <span class="hits">1</span>
           
           <code class="ruby">      fill_in &quot;user[username]&quot;, with: &quot;oscillo&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="96">
-          
+        <li class="covered" data-hits="1" data-linenumber="96">
+          <span class="hits">1</span>
           
           <code class="ruby">      fill_in &quot;user[email]&quot;, with: &quot;oscillo@gmail.com&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="97">
-          
+        <li class="covered" data-hits="1" data-linenumber="97">
+          <span class="hits">1</span>
           
           <code class="ruby">      fill_in &quot;user[password]&quot;, with: &quot;&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="98">
-          
+        <li class="covered" data-hits="1" data-linenumber="98">
+          <span class="hits">1</span>
           
           <code class="ruby">      fill_in &quot;user[password_confirmation]&quot;, with: &quot;oscarpistorius&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="99">
-          
+        <li class="covered" data-hits="1" data-linenumber="99">
+          <span class="hits">1</span>
           
           <code class="ruby">      find(&quot;.account_submit&quot;).click</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="100">
+        <li class="covered" data-hits="1" data-linenumber="100">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">      expect(Link.count).not_to eql 3</code>
+          <code class="ruby">      expect(Link.count).not_to eql 1</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="101">
@@ -2687,49 +2687,49 @@
         <li class="covered" data-hits="1" data-linenumber="104">
           <span class="hits">1</span>
           
-          <code class="ruby">      expect(User.count).to eql 2</code>
+          <code class="ruby">      expect(User.count).to eql 0</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="105">
-          
+        <li class="covered" data-hits="1" data-linenumber="105">
+          <span class="hits">1</span>
           
           <code class="ruby">      visit &#39;/signup&#39;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="106">
-          
+        <li class="covered" data-hits="1" data-linenumber="106">
+          <span class="hits">1</span>
           
           <code class="ruby">      fill_in &quot;user[username]&quot;, with: &quot;oscillo&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="107">
-          
+        <li class="covered" data-hits="1" data-linenumber="107">
+          <span class="hits">1</span>
           
           <code class="ruby">      fill_in &quot;user[email]&quot;, with: &quot;oscillo@gmail.com&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="108">
-          
+        <li class="covered" data-hits="1" data-linenumber="108">
+          <span class="hits">1</span>
           
           <code class="ruby">      fill_in &quot;user[password]&quot;, with: &quot;oscarpistorius&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="109">
-          
+        <li class="covered" data-hits="1" data-linenumber="109">
+          <span class="hits">1</span>
           
           <code class="ruby">      fill_in &quot;user[password_confirmation]&quot;, with: &quot;&quot;</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="110">
-          
+        <li class="covered" data-hits="1" data-linenumber="110">
+          <span class="hits">1</span>
           
           <code class="ruby">      find(&quot;.account_submit&quot;).click</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="111">
+        <li class="covered" data-hits="1" data-linenumber="111">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">      expect(Link.count).not_to eql 3</code>
+          <code class="ruby">      expect(Link.count).not_to eql 1</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="112">

@@ -1,6 +1,6 @@
 Rails.application.configure do
   # Settings specified here will take precedence over those in config/application.rb.
-
+ENV["CODECLIMATE_REPO_TOKEN"] = "aaf8c91787621552a7be6873cfbcb55f2b5e62740f951ba782f809cd4c10eb87"
   # The test environment is used exclusively to run your application's
   # test suite. You never need to work with it otherwise. Remember that
   # your test database is "scratch space" for the test suite and is wiped
