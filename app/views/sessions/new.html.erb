@@ -1,16 +1,18 @@
 
-<div class="container login">
-  <div class="signin col l8 offset-l4"> 
+
     <div id="flash">
       <%= render partial: 'links/flash' %>
     </div>
+    <div class="container login">
+  <div class="signin col l8 offset-l4"> 
+
     <h3>Login</h3>
 
     <%= form_tag '/login' do %>
 
       Email: <%= text_field_tag :email %>
       Password: <%= password_field_tag :password %>
-      <%= submit_tag "Submit", class: "btn blue" %>
+      <%= submit_tag "Submit", class: "btn blue", id: "submit" %>
 
     <% end %>
   </div>
