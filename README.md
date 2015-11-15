@@ -3,6 +3,10 @@
 ## Tushot 
 
 [![Circle CI](https://circleci.com/gh/andela-atemitope/Tushot/tree/working_url_shortener.svg?style=svg)](https://circleci.com/gh/andela-atemitope/Tushot/tree/working_url_shortener)
+
+<a href="https://codeclimate.com/github/andela-atemitope/Tushot"><img src="https://codeclimate.com/github/andela-atemitope/Tushot/badges/gpa.svg" /></a>
+
+<a href="https://codeclimate.com/github/andela-atemitope/Tushot/coverage"><img src="https://codeclimate.com/github/andela-atemitope/Tushot/badges/coverage.svg" /></a>
 ### Overview
 
 [*www.tushot-heroku.com*](tushot.heroku.com)
