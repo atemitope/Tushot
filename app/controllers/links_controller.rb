@@ -9,24 +9,15 @@ class LinksController < ApplicationController
     @count = Link.all.count
   end
 
-  # def check_url
-  #   # require 'pry'; binding.pry
-  #   if current_user
-  #     @check = Link.find_by(short_url: params[:short_url]).short_url.nil? 
-  #     flash[:notice] = @check ? "Short Url already exists. Try Again" : "Error generating Link, Try Again"
-      
-  #   end
-  # end
-
   def create
     @link = Link.new(link_params)
     if @link.save
       current_user.links << @link if current_user
-        # if params[:link][:short_url]  &&  (@link.short_url != params[:link][:short_url])
-          # flash[:notice] = "that bullet is already chosen but we generated a new one for you"
-        # else 
           flash[:notice] = "Link successfully created"
-          # require 'pry'; binding.pry
+          respond_to do |format|
+            # format.html
+            format.js {render layout: false}
+          end
     else
       @check = "display"
       flash[:notice] = Link.find_by(short_url: @default_short_params) ?  "Short Url already exists. Try Again" : "Error generating Link, Try Again"

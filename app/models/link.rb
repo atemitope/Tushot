@@ -6,7 +6,6 @@ class Link < ActiveRecord::Base
 
   belongs_to :user
   before_create :generate_short_url
-  # before_filter :deny_access, :unless => :draft_and_admin?
 
   validates :long_url, :url => true, presence: true
 
