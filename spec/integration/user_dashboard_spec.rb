@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "User Dashboard", type: :feature do
+RSpec.describe "User Dashboard", type:  :feature do
   subject(:user) do
     User.create(username: "Oscar", 
                 email: "oscillo@gmail.com " , 
@@ -65,12 +65,15 @@ RSpec.describe "User Dashboard", type: :feature do
       expect(page).to have_content("victims and counting")
 
       # expect(page).to have_http_status(200)
-      # expect(page).to have_content("macbook")
+      # expect(page).to have_content("macbook")y
     end
 
 
     it "the page should display automatically generated short links" do
-      User.create(username: "Oscillo", email: "oscarpalito@gmail.com", password: "oscarpistorius", password_confirmation: "oscarpistorius") 
+      User.create(username: "Oscillo", 
+                  email: "oscarpalito@gmail.com", 
+                  password: "oscarpistorius", 
+                  password_confirmation: "oscarpistorius") 
 
       visit "/login"
 
@@ -84,6 +87,18 @@ RSpec.describe "User Dashboard", type: :feature do
 
 
     end
+
+    it "should automatically redirect to the long_url if the short url has been assigned to another link" do 
+      link = Link.create(long_url: "http://www.futuretest.com", 
+                  short_url: "oscar", 
+                  clicks: 3, 
+                  user_id: 1) 
+      visit root_path
+      expect(page).to have_content "oscar"
+      find("a[href='oscar']").click
+    end
+
   end
 end
+# end
 

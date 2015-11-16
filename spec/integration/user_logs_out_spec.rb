@@ -2,7 +2,7 @@
 
 # RSpec.describe "User Logs Out", type: :feature do
 #   context "when a logged in user logs out" do
-#     it "the page should prompt the user for confirmation ",:js => true do 
+#     it "the page should prompt the user for confirmation " do 
 #       User.create(username: "oscar", 
 #                   email: "oscillo@gmail.com", 
 #                   password: "oscarpistorius", 
@@ -17,10 +17,10 @@
 
 #       click_link "Logout" 
 
-#       page.accept_alert 'Are you sure?' do
+#       # page.accept_alert 'Are you sure?' do
 #         click_button('OK')
 #       expect(page).to have_content("and it became tushot")
-#       end
+#       # end
 #     end
 #   end
 # end

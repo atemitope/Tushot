@@ -32,7 +32,6 @@ end
 def show
 
 end
-# create a current user method in application controller 
 
 
 

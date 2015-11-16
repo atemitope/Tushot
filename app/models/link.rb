@@ -14,6 +14,7 @@ class Link < ActiveRecord::Base
       generate_url = SecureRandom.urlsafe_base64
       if short_url 
         unless short_url_already_exists?
+          # require 'pry'; binding.pry
           return false
         else
           self.short_url = short_url

@@ -14,10 +14,10 @@ class LinksController < ApplicationController
     if @link.save
       current_user.links << @link if current_user
           flash[:notice] = "Link successfully created"
-          respond_to do |format|
-            # format.html
-            format.js {render layout: false}
-          end
+#           respond_to do |format|
+#             format.html
+#             format.js {render layout: false}
+#           end
     else
       @check = "display"
       flash[:notice] = Link.find_by(short_url: @default_short_params) ?  "Short Url already exists. Try Again" : "Error generating Link, Try Again"
