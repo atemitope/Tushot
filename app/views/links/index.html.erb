@@ -43,7 +43,7 @@
 
           <tr>
             <td><%= link_to "#{ truncate f.long_url, length: 18}", f.long_url %></td>
-            <td><%= link_to "#{root_url + f.short_url}", f.short_url %></td>
+            <td><%= link_to "#{truncate "#{root_url}#{f.short_url}", length: 26 }", f.short_url %></td>
             <td><%= f.clicks %></td>
           </tr>
           <% end %>
@@ -70,7 +70,7 @@
           <% @most_popular_links.each do |f| %>
           <tr>
             <td><%= link_to "#{truncate f.long_url, length: 18}", f.long_url %></td>
-            <td><%= link_to "#{root_url}#{f.short_url}", f.short_url %></td>
+            <td><%= link_to "#{truncate "#{root_url}#{f.short_url}", length: 26 }", f.short_url %></td>
             <td><%= f.clicks %></td>
           </tr>
           <% end %>
