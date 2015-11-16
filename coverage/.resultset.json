@@ -76,7 +76,7 @@
         1,
         null,
         1,
-        58,
+        59,
         null,
         null,
         1,
@@ -90,8 +90,8 @@
       "c:/Users/currys/documents/html/checkpoint_2/tushot/app/models/link.rb": [
         1,
         null,
-        13,
-        13,
+        14,
+        14,
         null,
         null,
         1,
@@ -146,10 +146,10 @@
         1,
         null,
         1,
-        4,
-        4,
-        4,
-        4,
+        5,
+        5,
+        5,
+        5,
         null,
         null,
         1,
@@ -170,12 +170,12 @@
         null,
         null,
         1,
-        0,
+        1,
         null,
-        0,
-        0,
-        0,
-        0,
+        1,
+        1,
+        1,
+        1,
         null,
         0,
         null,
@@ -256,6 +256,6 @@
         null
       ]
     },
-    "timestamp": 1447633114
+    "timestamp": 1447677027
   }
 }

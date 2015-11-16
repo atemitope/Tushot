@@ -95,7 +95,10 @@ RSpec.describe "User Dashboard", type:  :feature do
                   user_id: 1) 
       visit root_path
       expect(page).to have_content "oscar"
-      find("a[href='oscar']").click
+      within(".recent-left")  do
+         find("a[href='oscar']").click
+      end
+     
     end
 
   end
