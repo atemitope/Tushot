@@ -55,14 +55,14 @@ You now good to go. Visit the app on your browser to use Tushot (localhost:3000)
 
 ### Running the tests
 
-Tushot prides it's self in being fully tested. Tushot is tested using [rspec](http://rspec.info/), [capybara](http://jnicklas.github.io/capybara/), [faker](https://github.com/stympy/faker) and [factory_girl](http://www.rubydoc.info/gems/factory_girl/file/GETTING_STARTED.md) gems. To start the test, first migrate the test database by running __rake db:migrate__. Next run __bin/rspec spec__ to run all tests. You can also specify a particular test from the spec folder to run. Run tests with the _-fd_ flag to view the tests documentation.
+Tushot prides it's self in being fully tested. Tushot is tested using [rspec](http://rspec.info/), [capybara](http://jnicklas.github.io/capybara/) gems. To start the test, first migrate the test database by running __rake db:migrate__. Next run __bin/rspec spec__ to run all tests. You can also specify a particular test from the spec folder to run. Run tests with the _-fd_ flag to view the tests documentation.
 
 ## App features
 
-*   Creates _Tushot's_for users if not custom string is provided
-*   Creates customized _Tushot's_for users if given a custom string
-*   Keeps tabs of most recent _Tushots_
-*   Keeps tabs of popular _Tushots_
+*   Creates Shot's_for users if not custom string is provided
+*   Creates customized _Shots's_for users if given a custom string
+*   Keeps tabs of most recent _Shots_
+*   Keeps tabs of popular _Shots_
 *   Provides visit statistics for registered users
 
 ## Contributing
