@@ -17,7 +17,8 @@ class UsersController < ApplicationController
 
 
 def dashboard
-  @user = User.find_by(params[:id])
+  # require 'pry'; binding.pry
+  @user = current_user
   if  !current_user
     redirect_to "/login" 
     flash[:notice] = "you have to be signed in"
