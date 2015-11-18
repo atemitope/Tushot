@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151030105553) do
+ActiveRecord::Schema.define(version: 20151118104548) do
+
+  create_table "details", force: :cascade do |t|
+    t.string   "browser"
+    t.string   "string"
+    t.string   "refferer"
+    t.string   "location"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "links", force: :cascade do |t|
     t.string   "long_url"
@@ -26,8 +35,9 @@ ActiveRecord::Schema.define(version: 20151030105553) do
     t.string   "username"
     t.string   "email"
     t.string   "password_digest"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+    t.integer  "links_count",     default: 0, null: false
   end
 
 end

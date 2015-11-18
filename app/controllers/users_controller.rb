@@ -4,6 +4,7 @@ class UsersController < ApplicationController
   end
 
   def create
+    # require 'pry'; binding.pry
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
@@ -15,7 +16,6 @@ class UsersController < ApplicationController
     end
   end
 
-
 def dashboard
   # require 'pry'; binding.pry
   @user = current_user
@@ -24,11 +24,10 @@ def dashboard
     flash[:notice] = "you have to be signed in"
   end
   @link = Link.new
-  @user_links = @user.links.most_recent_links.page(params[:page]).per(4)
-  @user_popular_links = @user.links.most_popular_links.page(params[:page]).per(4)
   @count = @user.links.count
+  @recent_links = @user.links.most_recent_links.page(params[:recent_links]).per(4)
+  @popular_links = @user.links.most_popular_links.page(params[:popular_links]).per(4)
 end
-
 
 def show
 

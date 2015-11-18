@@ -13,7 +13,8 @@ Rails.application.routes.draw do
   get "/signup" => "users#new"
   post "/users" => "users#create"
 
-
+  get "/details" => 'links#details'
+ 
   get "/dashboard"  => "users#dashboard"
   get "/:id" => "links#show"
 

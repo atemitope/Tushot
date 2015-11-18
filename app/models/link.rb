@@ -2,9 +2,11 @@ class Link < ActiveRecord::Base
 
   scope  :most_recent_links, -> {order("created_at desc").select("long_url","short_url","clicks","created_at")}
   scope  :most_popular_links, -> {order("clicks desc").select("long_url","short_url","clicks","created_at")}
+ 
 
 
-  belongs_to :user
+  belongs_to :user, :counter_cache => true
+  # counter_culture :user
   before_create :generate_short_url
 
   validates :long_url, :url => true, presence: true
@@ -30,4 +32,9 @@ class Link < ActiveRecord::Base
     Link.find_by(short_url: short_url).nil? ? true : false 
 
   end
+
+  # def self.most_popular_users
+  #   group(:user_id).count
+  # end
+
 end

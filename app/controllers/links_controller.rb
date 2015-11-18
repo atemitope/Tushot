@@ -6,10 +6,19 @@ class LinksController < ApplicationController
     @link = Link.new
     @most_recent_links = Link.all.most_recent_links.limit(4)
     @most_popular_links = Link.all.most_popular_links.limit(4)
+    @most_popular_users = User.all.most_popular_users
     @count = Link.all.count
+
+    # popular_users = Link.most_popular_users
+
+    # @most_popular_users = popular_users.sort_by { |key, value| -value
+    #   User.find_by(id: key)
+    #   }
+    # require 'pry'; binding.pry
   end
 
   def create
+    # require 'pry'; binding.pry
     @link = Link.new(link_params)
     if @link.save
       current_user.links << @link if current_user
@@ -20,8 +29,7 @@ class LinksController < ApplicationController
 #           end
     else
       @check = "display"
-      flash[:notice] = Link.find_by(short_url: @default_short_params) ?  "Short Url already exists. Try Again" : "Error generating Link, Try Again"
-      
+      flash[:notice] = Link.find_by(short_url: @default_short_params) ?  "Short Url already exists. Try Again" : "Error generating Link, Try Again"   
     end
   end
 
@@ -42,7 +50,8 @@ class LinksController < ApplicationController
 
   end
 
-  def new 
+  def details
+   # @link = Link.find_by(short_url: params[:id])
   end
 
   def edit   

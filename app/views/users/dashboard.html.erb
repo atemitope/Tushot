@@ -33,52 +33,19 @@
       <h6>Recent</h6>
         <div class="stats card blue-grey darken-1 recent-left">
           <div class="card-content white-text">
-            <table>
-              <thead>
-                <tr>
-                  <th data-field="id">Old Url</th>
-                  <th data-field="name">New Url</th>
-                  <th data-field="price">Clicks</th>
-                </tr>
-              </thead>
-
-              <tbody>
-                <% @user_links.each do |f| %>
-                  <tr>
-                    <td><%= link_to "#{ truncate f.long_url, length: 18}", f.long_url %></td>
-                    <td><%= link_to "#{truncate "#{root_url}#{f.short_url}", length: 26 }", f.short_url %></td>
-                    <td><%= f.clicks %></td>
-                  </tr>
-                <% end %>
-              </tbody>
-            </table>
-            <%= paginate @user_links %>
+            <div id="content-card-1">
+              <%= render('recent_links') %>
+            </div>
           </div>
         </div>
     </div>
     <div class="col l6 right">
       <h6>Most Popular</h6>
         <div class="stats card blue-grey darken-1 popular-right">
-          <div class="card-content white-text">
-            <table>
-              <thead>
-                <tr>
-                  <th data-field="id">Old Url</th>
-                  <th data-field="name">New Url</th>
-                  <th data-field="price">Clicks</th>
-                </tr>
-              </thead>
-              <tbody>
-                <% @user_popular_links.each do |f| %>
-                <tr>
-                  <td><%= link_to "#{truncate f.long_url, length: 18}", f.long_url %></td>
-                  <td><%= link_to "#{truncate "#{root_url}#{f.short_url}", length: 26 }", f.short_url %></td>
-                  <td><%= f.clicks %></td>
-                </tr>
-                <% end %>
-              </tbody>
-            </table>
-            <%= paginate @user_popular_links %>
+          <div class="card-content white-text" id="pagination">
+            <div id="content-card-2">
+              <%= render('most_popular_links') %>
+            </div>
           </div>
         </div>
     </div>

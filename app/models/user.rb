@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  scope :most_popular_users, -> {order("links_count desc").select("username","links_count")}
   has_secure_password
   has_many :links
 
