@@ -46,9 +46,11 @@
                     <td><%= @link.long_url %></td>
                     <td><%= @link.short_url %></td>
                     <td><%= @link.clicks %></td>
-                    <td><%= @link.details[0].location %></td>
-                    <td><%= @link.details[0].refferer %></td>
-                    <td><%= @link.details[0].browser %></td>
+                    <% if @link.details != [] %>
+                      <td><%= @link.details[0].location %></td>
+                      <td><%= @link.details[0].refferer %></td>
+                      <td><%= @link.details[0].browser %></td>
+                    <% end %>
                 </tr>
 
               </tbody>
