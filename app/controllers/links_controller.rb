@@ -53,8 +53,9 @@ class LinksController < ApplicationController
     flash[:notice] = "you have to be signed in"
   end
 
+  # @details = Detail.all.link_details
   @link = Link.find_by(short_url: params[:short_url])
-  require 'pry'; binding.pry
+  # require 'pry'; binding.pry
 
   end
 
