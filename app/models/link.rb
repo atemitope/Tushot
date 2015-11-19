@@ -2,9 +2,9 @@ class Link < ActiveRecord::Base
 
   scope  :most_recent_links, -> {order("created_at desc").select("long_url","short_url","clicks","created_at")}
   scope  :most_popular_links, -> {order("clicks desc").select("long_url","short_url","clicks","created_at")}
- 
+  
 
-
+  has_many :details
   belongs_to :user, :counter_cache => true
   # counter_culture :user
   before_create :generate_short_url
@@ -30,11 +30,9 @@ class Link < ActiveRecord::Base
 
   def short_url_already_exists?
     Link.find_by(short_url: short_url).nil? ? true : false 
-
   end
 
-  # def self.most_popular_users
-  #   group(:user_id).count
-  # end
-
+  def increment_click
+    self.increment!(:clicks)
+  end
 end

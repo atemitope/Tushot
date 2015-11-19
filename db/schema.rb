@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20151118104548) do
+ActiveRecord::Schema.define(version: 20151119112346) do
 
   create_table "details", force: :cascade do |t|
     t.string   "browser"
@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 20151118104548) do
     t.string   "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer  "links_id"
+    t.integer  "link_id"
   end
 
   create_table "links", force: :cascade do |t|

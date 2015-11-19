@@ -1,4 +1,5 @@
 class LinksController < ApplicationController
+  require 'browser'
 
   before_action :authorize_user_for_short_url,:check_default, only: [:create] 
 
@@ -8,13 +9,6 @@ class LinksController < ApplicationController
     @most_popular_links = Link.all.most_popular_links.limit(4)
     @most_popular_users = User.all.most_popular_users
     @count = Link.all.count
-
-    # popular_users = Link.most_popular_users
-
-    # @most_popular_users = popular_users.sort_by { |key, value| -value
-    #   User.find_by(id: key)
-    #   }
-    # require 'pry'; binding.pry
   end
 
   def create
@@ -38,7 +32,10 @@ class LinksController < ApplicationController
     @link = Link.find_by(short_url: params[:id])
 
     if @link
-      @link.clicks += 1
+      @link.increment_click
+      # require 'pry'; binding.pry
+      @alex = @link.details.build(location: request.location.data['country_name'], refferer: request.referrer, browser: convert_to_device)
+      # require 'pry'; binding.pry
       @link.save
       redirect_to @link.long_url
     else 
@@ -51,12 +48,24 @@ class LinksController < ApplicationController
   end
 
   def details
-   # @link = Link.find_by(short_url: params[:id])
+  if  !current_user
+    redirect_to "/login" 
+    flash[:notice] = "you have to be signed in"
+  end
+
+  @link = Link.find_by(short_url: params[:short_url])
+  require 'pry'; binding.pry
+
   end
 
   def edit   
   end
 
+  def convert_to_device
+    browser = ::Detector.new
+    browser_agent = browser.browser_detection(request.env['HTTP_USER_AGENT'])
+    return browser_agent
+  end
 
   private
   #specifying only trusted parameters from the Internet

@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   get "/details" => 'links#details'
  
   get "/dashboard"  => "users#dashboard"
+  get "/dashboard/:short_url"  => "links#details"
   get "/:id" => "links#show"
 
   resources :links
