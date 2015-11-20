@@ -32,6 +32,8 @@ gem "pry-nav"
 
 gem "kaminari"
 
+gem "draper"
+
 gem 'materialize-sass'
 
 gem "font-awesome-rails"

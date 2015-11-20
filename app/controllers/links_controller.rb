@@ -48,15 +48,14 @@ class LinksController < ApplicationController
   end
 
   def details
-  if  !current_user
-    redirect_to "/login" 
-    flash[:notice] = "you have to be signed in"
-  end
- 
-  # @details = Detail.all.link_details
-  @link = Link.find_by(short_url: params[:short_url])
-  require 'pry'; binding.pry
-
+    if  !current_user
+      redirect_to "/login" 
+      flash[:notice] = "you have to be signed in"
+    end
+    @link_details = Link.find_by(short_url: params[:short_url])
+    @browser = Detail.link_details_browser(@link_details.id)
+    @location = Detail.link_details_location(@link_details.id)
+    @refferer = Detail.link_details_refferer(@link_details.id)
   end
 
   def edit   

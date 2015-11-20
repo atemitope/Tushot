@@ -82,6 +82,11 @@ GEM
     docile (1.1.5)
     domain_name (0.5.25)
       unf (>= 0.0.5, < 1.0.0)
+    draper (2.1.0)
+      actionpack (>= 3.0)
+      activemodel (>= 3.0)
+      activesupport (>= 3.0)
+      request_store (~> 1.0)
     erubis (2.7.0)
     ethon (0.8.0)
       ffi (>= 1.3.0)
@@ -186,6 +191,7 @@ GEM
       thor (>= 0.18.1, < 2.0)
     rake (10.4.2)
     rdoc (4.2.0)
+    request_store (1.2.1)
     rest-client (1.8.0)
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 3.0)
@@ -299,6 +305,7 @@ DEPENDENCIES
   counter_culture (~> 0.1.33)
   coveralls
   database_cleaner
+  draper
   font-awesome-rails
   geocoder
   jbuilder (~> 2.0)

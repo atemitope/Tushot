@@ -43,14 +43,20 @@
         
               <tbody>
                 <tr>
-                    <td><%= @link.long_url %></td>
-                    <td><%= @link.short_url %></td>
-                    <td><%= @link.clicks %></td>
-                    <% if @link.details != [] %>
-                      <td><%= @link.details[0].location %></td>
-                      <td><%= @link.details[0].refferer %></td>
-                      <td><%= @link.details[0].browser %></td>
+                  <td><%= "#{truncate "#{@link_details.long_url}", length: 75 }" %></td>
+                  <td><%= @link_details.short_url %></td>
+                  <td><%= @link_details.clicks %></td>
+                  <% if @link_details.details != [] %>
+                    <% @location.each do |location| %>
+                      <td><%= location.location %> <%= location.count %></td>
                     <% end %>
+                    <% @refferer.each do |refferer| %>
+                      <td><%= refferer.refferer %> <%= refferer.count %></td>
+                    <% end %>
+                     <% @browser.each do |browser| %>
+                      <td><%= browser.browser %> <%= browser.count %></td>
+                    <% end %>
+                  <% end %>
                 </tr>
 
               </tbody>
@@ -59,5 +65,8 @@
           </div>
         </div>
     </div>
+    <div class="back-button">
+  <%= link_to "Back to Dashboard", dashboard_path , class: "waves-effect waves-light btn-large" %>
+</div>
   </div>
 </div>
