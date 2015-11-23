@@ -12,7 +12,6 @@ class LinksController < ApplicationController
   end
 
   def create
-    # require 'pry'; binding.pry
     @link = Link.new(link_params)
     if @link.save
       current_user.links << @link if current_user
@@ -33,9 +32,7 @@ class LinksController < ApplicationController
 
     if @link
       @link.increment_click
-      # require 'pry'; binding.pry
-      @alex = @link.details.build(location: request.location.data['country_name'], refferer: request.referrer, browser: convert_to_device)
-      # require 'pry'; binding.pry
+      @link.details.build(location: request.location.data['country_name'], referrer: request.referrer, browser: convert_to_device)
       @link.save
       redirect_to @link.long_url
     else 
@@ -55,7 +52,7 @@ class LinksController < ApplicationController
     @link_details = Link.find_by(short_url: params[:short_url])
     @browser = Detail.link_details_browser(@link_details.id)
     @location = Detail.link_details_location(@link_details.id)
-    @refferer = Detail.link_details_refferer(@link_details.id)
+    @referrer = Detail.link_details_referrer(@link_details.id)
   end
 
   def edit   

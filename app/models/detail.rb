@@ -11,8 +11,8 @@ belongs_to :link
    self.select('location, count("id") as count').where(link_id: link_id).order("count desc").group('location').limit(5)
  end
 
-  def self.link_details_refferer(link_id)
-   self.select('refferer, count("id") as count').where(link_id: link_id).order("count desc").group('refferer').limit(5)
+  def self.link_details_referrer(link_id)
+   self.select('referrer, count("id") as count').where(link_id: link_id).order("count desc").group('referrer').limit(5)
  end
  
 end

@@ -4,7 +4,6 @@ class UsersController < ApplicationController
   end
 
   def create
-    # require 'pry'; binding.pry
     @user = User.new(user_params)
     if @user.save
       session[:user_id] = @user.id
@@ -17,7 +16,6 @@ class UsersController < ApplicationController
   end
 
 def dashboard
-  # require 'pry'; binding.pry
   @user = current_user
   if  !current_user
     redirect_to "/login" 
@@ -25,18 +23,16 @@ def dashboard
   end
   @link = Link.new
   @count = @user.links.count
-  @recent_links = @user.links.most_recent_links.page(params[:recent_links]).per(4)
+  @recent_links = @user.links.most_recent_links.page(params[:recent_links]).per(5)
   @popular_links = @user.links.most_popular_links.page(params[:popular_links]).per(4)
 end
 
 def show
-
 end
 
 
 
   private
-#grants permission to parameters coming from the browser
   def user_params
     params.require(:user).permit(:username, :email, :password, :password_confirmation)
   end

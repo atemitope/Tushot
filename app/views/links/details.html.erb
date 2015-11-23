@@ -42,23 +42,20 @@
               </thead>
         
               <tbody>
-                <tr>
-                  <td><%= "#{truncate "#{@link_details.long_url}", length: 75 }" %></td>
-                  <td><%= @link_details.short_url %></td>
-                  <td><%= @link_details.clicks %></td>
-                  <% if @link_details.details != [] %>
-                    <% @location.each do |location| %>
-                      <td><%= location.location %> <%= location.count %></td>
-                    <% end %>
-                    <% @refferer.each do |refferer| %>
-                      <td><%= refferer.refferer %> <%= refferer.count %></td>
-                    <% end %>
-                     <% @browser.each do |browser| %>
-                      <td><%= browser.browser %> <%= browser.count %></td>
-                    <% end %>
+                <td><%= link_to "#{truncate "#{@link_details.long_url}", length: 65 }" , @link_details.long_url %></td>
+                <td><%= link_to "#{truncate "#{root_url}#{@link_details.short_url}", length:30}", @link_details.short_url %></td>
+                <td><%= @link_details.clicks %></td>
+                <% if @link_details.details != [] %>
+                  <% @location.each do |location| %>
+                    <td><%= location.location %></td>
                   <% end %>
-                </tr>
-
+                  <% @referrer.each do |referrer| %>
+                    <td><%= referrer.referrer %></td>
+                  <% end %>
+                  <% @browser.each do |browser| %>
+                    <td><%= browser.browser %></td>
+                  <% end %>
+                <% end %>
               </tbody>
             </table>
 
