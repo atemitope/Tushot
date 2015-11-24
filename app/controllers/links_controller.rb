@@ -7,7 +7,7 @@ class LinksController < ApplicationController
     @link = Link.new
     @most_recent_links = Link.all.most_recent_links.limit(4)
     @most_popular_links = Link.all.most_popular_links.limit(4)
-    @most_popular_users = User.all.most_popular_users
+    @most_popular_users = User.all.most_popular_users.limit(4)
     @count = Link.all.count
   end
 
@@ -30,7 +30,7 @@ class LinksController < ApplicationController
   def show
     @link = Link.find_by(short_url: params[:id])
 
-    if @link
+    if @link && @link.active
       @link.increment_click
       @link.details.build(location: request.location.data['country_name'], referrer: request.referrer, browser: convert_to_device)
       @link.save
@@ -55,7 +55,15 @@ class LinksController < ApplicationController
     @referrer = Detail.link_details_referrer(@link_details.id)
   end
 
-  def edit   
+  def update
+    @link_details = Link.find_by(id: params[:id])
+    @link_details.update(link_params)
+    flash[:notice] = "Link Updated"
+    redirect_to "/dashboard"
+  end
+
+  def destroy
+
   end
 
   def convert_to_device

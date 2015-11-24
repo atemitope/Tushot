@@ -19,6 +19,9 @@ Rails.application.routes.draw do
   get "/dashboard/:short_url"  => "links#details"
   get "/:id" => "links#show"
 
+
+  # post "/dashboard/:short_url" => "links#edit"
+  
   resources :links
 
   # Example of regular route:

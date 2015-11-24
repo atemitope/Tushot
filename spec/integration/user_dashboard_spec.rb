@@ -80,7 +80,7 @@ RSpec.describe "User Dashboard", type:  :feature do
       fill_in "email", with: "oscarpalito@gmail.com"
       fill_in "password", with: "oscarpistorius"
 
-      # require 'pry'; binding.pry
+.pry
       page.find("input[type='submit']").click
 
       expect(page).to have_content("Welcome Oscillo")

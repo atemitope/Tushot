@@ -42,15 +42,15 @@
               </thead>
         
               <tbody>
-                <td><%= link_to "#{truncate "#{@link_details.long_url}", length: 65 }" , @link_details.long_url %></td>
-                <td><%= link_to "#{truncate "#{root_url}#{@link_details.short_url}", length:30}", @link_details.short_url %></td>
+                <td><%= link_to "#{truncate "#{@link_details.long_url}", length: 30 }" , @link_details.long_url, :title => "#{@link_details.long_url}" %></td>
+                <td><%= link_to "#{truncate "#{root_url}#{@link_details.short_url}", length: 20}", @link_details.short_url, :title => "#{@link_details.short_url}" %></td>
                 <td><%= @link_details.clicks %></td>
                 <% if @link_details.details != [] %>
                   <% @location.each do |location| %>
                     <td><%= location.location %></td>
                   <% end %>
                   <% @referrer.each do |referrer| %>
-                    <td><%= referrer.referrer %></td>
+                    <td><%= link_to "#{truncate "#{referrer.referrer}",  length: 15}", referrer.referrer,  title: "#{referrer.referrer}" %></td>
                   <% end %>
                   <% @browser.each do |browser| %>
                     <td><%= browser.browser %></td>
@@ -62,8 +62,11 @@
           </div>
         </div>
     </div>
+    <%= render('edit_link') %>
     <div class="back-button">
   <%= link_to "Back to Dashboard", dashboard_path , class: "waves-effect waves-light btn-large" %>
 </div>
+
+
   </div>
 </div>

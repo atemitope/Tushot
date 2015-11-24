@@ -1,0 +1,16 @@
+<div class="edit_link">
+  <h6>Edit Link</h6>
+  <%= form_for (@link_details) do |f| %>
+  <%= f.label :long_url, "Long Url" %>
+  <%= f.text_field :long_url, class: 'center' %> 
+  <%= f.text_field :short_url %>
+      <%= f.radio_button :active, true, id: "true" %>
+      <%= f.label :active, "Active", for: "true", class: 'active-text' %>
+      <%= f.radio_button :active,  false, id: "false" %>
+      <%= f.label :active, "Inactive", for: "false", class: 'inactive-text' %><br /><br />
+      <div class="row center">
+        <%= f.submit "Update" %>
+      </div>
+  <% end %>
+</div>
+
