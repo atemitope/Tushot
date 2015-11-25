@@ -24,7 +24,7 @@ def dashboard
     @popular_links = @user.links.most_popular_links.page(params[:popular_links]).per(4)
   else 
     redirect_to "/login" 
-    flash[:notice] = "you have to be signed in"
+    flash[:success] = "you have to be signed in"
   end
 end
 
