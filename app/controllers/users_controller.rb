@@ -10,7 +10,7 @@ class UsersController < ApplicationController
       redirect_to "/dashboard"
       flash[:notice] = "Account created successfully"
     else
-      flash[:notice] = "An error occurred!"
+      flash[:success] = "An error occurred!"
       render "new"
     end
   end

@@ -35,8 +35,12 @@ class LinksController < ApplicationController
       @link.details.build(location: request.location.data['country_name'], referrer: request.referrer, browser: convert_to_device)
       @link.save
       redirect_to @link.long_url
-    else 
-      redirect_to root_url, notice: "Link doesnt exist"
+    elsif @link && @link.active == false
+      flash[:success] =  "The requested Shot has been disabled"
+      redirect_to root_url
+    else
+      flash[:success] =  "The Shot you are looking for doesnt exist"
+      redirect_to root_url
     end
   end
 
@@ -45,6 +49,7 @@ class LinksController < ApplicationController
   end
 
   def details
+    require 'pry'; binding.pry
     if  !current_user
       redirect_to "/login" 
       flash[:notice] = "you have to be signed in"
@@ -58,12 +63,22 @@ class LinksController < ApplicationController
   def update
     @link_details = Link.find_by(id: params[:id])
     @link_details.update(link_params)
-    flash[:notice] = "Link Updated"
+    flash[:success] = "Link Updated"
     redirect_to "/dashboard"
   end
 
   def destroy
-
+    require 'pry'; binding.pry
+    @link = Link.find(params[:id])
+    if @link.user_id == current_user.id
+      @link.destroy
+      @link.count -= 1
+      flash[:success] = "Shot Deleted successfully!"
+      redirect_to "/dashboard"
+    else
+      flash[:success] = "You cannot delete this SHot!!"
+      redirect_to root_path
+    end
   end
 
   def convert_to_device

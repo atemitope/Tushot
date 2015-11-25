@@ -9,7 +9,9 @@
 </head>
 <body>
 <%= render partial: "partials/application_header" %>
-  
+<%= javascript_tag do %>
+  Materialize.toast('<%=flash[:success]%>', 4000, 'white black-text rounded')
+<% end %>
 
   <%= yield %>
 <%= render partial: "partials/application_footer" %>

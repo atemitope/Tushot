@@ -20,8 +20,10 @@ Rails.application.routes.draw do
   get "/:id" => "links#show"
 
 
-  # post "/dashboard/:short_url" => "links#edit"
+  post "/dashboard/:short_url" => "links#edit"
   
+  delete "/links/delete/:id" => "links#destroy"
+
   resources :links
 
   # Example of regular route:
