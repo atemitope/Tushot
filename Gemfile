@@ -47,7 +47,7 @@ gem "coveralls", require: false
 gem "codeclimate-test-reporter", group: :test, require: nil
 
 group :production do
-  gem 'pg', '0.17.1'
+  gem 'pg'
   gem "rails_12factor", "0.0.2"
   gem 'puma'
 end
