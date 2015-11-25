@@ -11,15 +11,15 @@ class LinksController < ApplicationController
     @count = Link.all.count
   end
 
-  def create
+  def create#           respond_to do |format|
+#             format.html
+#             format.js {render layout: false}
+#           end
     @link = Link.new(link_params)
     if @link.save
       current_user.links << @link if current_user
           flash[:notice] = "Link successfully created"
-#           respond_to do |format|
-#             format.html
-#             format.js {render layout: false}
-#           end
+
     else
       @check = "display"
       flash[:notice] = Link.find_by(short_url: @default_short_params) ?  "Short Url already exists. Try Again" : "Error generating Link, Try Again"   
@@ -49,7 +49,7 @@ class LinksController < ApplicationController
   end
 
   def details
-    require 'pry'; binding.pry
+    # require 'pry'; binding.pry
     if  !current_user
       redirect_to "/login" 
       flash[:notice] = "you have to be signed in"
@@ -72,7 +72,6 @@ class LinksController < ApplicationController
     @link = Link.find(params[:id])
     if @link.user_id == current_user.id
       @link.destroy
-      @link.count -= 1
       flash[:success] = "Shot Deleted successfully!"
       redirect_to "/dashboard"
     else

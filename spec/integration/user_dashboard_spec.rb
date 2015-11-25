@@ -1,6 +1,21 @@
 require "rails_helper"
 
-RSpec.describe "User Dashboard", type:  :feature do
+  def log_in_for_test
+   user = User.create(username: "Oscar", 
+                email: "oscillo@gmail.com", 
+                password: "oscarpalito", 
+                password_confirmation: "oscarpalito")
+    visit login_path
+
+       fill_in "email", with: user.email
+       fill_in "password", with: "oscarpalito"
+
+      page.find("input[type='submit']").click
+
+      user
+  end
+
+RSpec.describe "User Dashboard", type:  :feature do 
   subject(:user) do
     User.create(username: "Oscar", 
                 email: "oscillo@gmail.com " , 
@@ -79,30 +94,107 @@ RSpec.describe "User Dashboard", type:  :feature do
 
       fill_in "email", with: "oscarpalito@gmail.com"
       fill_in "password", with: "oscarpistorius"
-
-.pry
       page.find("input[type='submit']").click
 
       expect(page).to have_content("Welcome Oscillo")
 
 
     end
+  end
+
+  describe "User Dashboard" do
+    context "when the user tries to shorten links that have toggled active or inactive"
+    it "should automatically redirect to the long_url if the short url is active" do 
+      user = log_in_for_test
+      link = Link.create(long_url: "http://tushot.heroku.com", 
+                  short_url: "oscar", 
+                  clicks: 3, 
+                  user_id: 1,
+                  active: true)
+      visit "/dashboard"
+
+      within(".recent-left")  do
+         find("a[href='/oscar']").click
+      end
+      expect(page).to have_content(" ...and it became tushot!")
+    end
+
 
     it "should automatically redirect to the long_url if the short url has been assigned to another link" do 
+      user = log_in_for_test
       link = Link.create(long_url: "http://www.futuretest.com", 
                   short_url: "oscar", 
                   clicks: 3, 
-                  user_id: 1) 
-      visit root_path
-      find("a[href='oscar']")
-      within(".recent-left")  do
-         find("a[href='oscar']").click
+                  user: user,
+                  active: false)
+        visit "/dashboard"
+        expect(page).to have_content("Welcome Oscar")
+        expect(page).to have_content("input custom url here:")
+        # require 'pry'; binding.pry
+        # find("a[href='/oscar']")
+        within(".recent-left")  do
+           find("a[href='/oscar']").click
+         end
+        expect(page).to have_content(" ...and it became tushot!")
+        expect(page).to have_content("Notorious Fugitives")
       end
-      # expect(response).to have_http_status(:success)
-     
-    end
+ 
 
+    it "should navigate to the details page if the " do 
+      user = log_in_for_test
+      link = Link.create(long_url: "http://www.futuretest.com", 
+                  short_url: "oscar", 
+                  clicks: 3, 
+                  user: user,
+                  active: false)
+      details = Detail.create(referrer: "www.tushot-heroku.com",
+                        location: "Bulgaria",
+                        browser: "Chrome",
+                        link: link)
+        visit "/dashboard"
+        expect(page).to have_content("Welcome Oscar")
+        expect(page).to have_content("input custom url here:")
+        within(".popular-right")  do
+           find("a[href='/dashboard/oscar']").click
+         end
+         # require 'pry'; binding.pry
+        expect(page).to have_content("YOUR DETAILS EXIST HERE")
+        expect(page).to have_content("Old Url")
+        expect(page).to have_content("Bulgaria")
+        expect(page).to have_content("Chrome")
+        expect(page).to have_content('www.tushot-h...')
+        expect(page).to have_content("New Url")
+        expect(page).to have_content("Clicks")
+        expect(page).to have_content("Location")
+        expect(page).to have_content("Referrer")
+        expect(page).to have_content("http://www.futuretest.com")
+        expect(page).to have_content("Edit")
+        expect(page).to have_content("Long Url")
+        expect(page).to have_content("Delete")
+        expect(page).to have_content("Back to Dashboard")
+      end
+
+    it "should navigate to the details page if the " do 
+      user = log_in_for_test
+      link = Link.create(long_url: "http://www.futuretest.com", 
+                  short_url: "oscar", 
+                  clicks: 3, 
+                  user: user,
+                  active: false)
+      details = Detail.create(referrer: "www.tushot-heroku.com",
+                        location: "Bulgaria",
+                        browser: "Chrome",
+                        link: link)
+        visit "/dashboard"
+        expect(page).to have_content("Welcome Oscar")
+        expect(page).to have_content("input custom url here:")
+        within(".popular-right")  do
+           find("a[href='/dashboard/oscar']").click
+        end
+        # require 'pry'; binding.pry
+        # find(:css, "red").click
+        click_link("Delete")
+      expect(Link.count).to eql 0
+    end
   end
 end
-# end
-

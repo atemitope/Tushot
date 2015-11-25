@@ -22,7 +22,7 @@ Rails.application.routes.draw do
 
   post "/dashboard/:short_url" => "links#edit"
   
-  delete "/links/delete/:id" => "links#destroy"
+  # delete "/links/delete/:id" => "links#destroy"
 
   resources :links
 

@@ -20,7 +20,6 @@ ActiveRecord::Schema.define(version: 20151124173409) do
     t.string   "location"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer  "links_id"
     t.integer  "link_id"
   end
 

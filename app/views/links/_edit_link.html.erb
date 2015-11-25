@@ -14,7 +14,7 @@
       <%= f.text_field :short_url %>
     </div>
   </div>
-  <div class="row">
+  <div class="row controls">
     <div class="col l3 offset-l1">
       <%= f.radio_button :active, true, id: "true" %>
       <%= f.label :active, "Active", for: "true", class: 'active-text' %>
@@ -25,8 +25,7 @@
       <%= f.submit "Update", class: "btn btn-info" %>
     </div>
     <div class="col l4">
-    <%= link_to "Delete", "/links/delete/#{:id}", class: "btn btn-info red" , data: {confirm: "Are you sure?"}%>
-
+    <%= link_to "Delete", "/links/#{@link_details.id}", class: "btn btn-info red" , method: "delete" %>
     </div>
     </div>
   <% end %>
