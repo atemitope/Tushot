@@ -16,15 +16,16 @@ class UsersController < ApplicationController
   end
 
 def dashboard
-  @user = current_user
-  if  !current_user
+  if current_user
+    @user = current_user
+    @link = Link.new
+    @count = @user.links.count
+    @recent_links = @user.links.most_recent_links.page(params[:recent_links]).per(5)
+    @popular_links = @user.links.most_popular_links.page(params[:popular_links]).per(4)
+  else 
     redirect_to "/login" 
     flash[:notice] = "you have to be signed in"
   end
-  @link = Link.new
-  @count = @user.links.count
-  @recent_links = @user.links.most_recent_links.page(params[:recent_links]).per(5)
-  @popular_links = @user.links.most_popular_links.page(params[:popular_links]).per(4)
 end
 
 def show
