@@ -49,7 +49,6 @@ class LinksController < ApplicationController
   end
 
   def details
-    # require 'pry'; binding.pry
     if  !current_user
       redirect_to "/login" 
       flash[:notice] = "you have to be signed in"
@@ -68,7 +67,6 @@ class LinksController < ApplicationController
   end
 
   def destroy
-    require 'pry'; binding.pry
     @link = Link.find(params[:id])
     if @link.user_id == current_user.id
       @link.destroy

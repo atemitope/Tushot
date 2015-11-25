@@ -41,7 +41,6 @@ RSpec.describe "User Dashboard", type:  :feature do
 
       expect(page).to have_content("Welcome Oscar")
 
-      # expect(page).to have_selector("input#link_short_url")
     end
 
     it "the page should contain a field that enables the user type in custom keywords" do
@@ -72,15 +71,9 @@ RSpec.describe "User Dashboard", type:  :feature do
       expect(page).to have_content("New Url")
       expect(page).to have_content("Most Popular")
       expect(page).to have_content("Recent")
-     # page.find(".cut").click
-
-     # expect(page).to have_css('div.shorturl_container')
      visit "/dashboard"
 
       expect(page).to have_content("victims and counting")
-
-      # expect(page).to have_http_status(200)
-      # expect(page).to have_content("macbook")y
     end
 
 
@@ -130,8 +123,6 @@ RSpec.describe "User Dashboard", type:  :feature do
         visit "/dashboard"
         expect(page).to have_content("Welcome Oscar")
         expect(page).to have_content("input custom url here:")
-        # require 'pry'; binding.pry
-        # find("a[href='/oscar']")
         within(".recent-left")  do
            find("a[href='/oscar']").click
          end
@@ -157,7 +148,6 @@ RSpec.describe "User Dashboard", type:  :feature do
         within(".popular-right")  do
            find("a[href='/dashboard/oscar']").click
          end
-         # require 'pry'; binding.pry
         expect(page).to have_content("YOUR DETAILS EXIST HERE")
         expect(page).to have_content("Old Url")
         expect(page).to have_content("Bulgaria")
@@ -191,8 +181,6 @@ RSpec.describe "User Dashboard", type:  :feature do
         within(".popular-right")  do
            find("a[href='/dashboard/oscar']").click
         end
-        # require 'pry'; binding.pry
-        # find(:css, "red").click
         click_link("Delete")
       expect(Link.count).to eql 0
     end
